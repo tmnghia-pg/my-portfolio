@@ -27,7 +27,7 @@ class ProfileService {
 
   getSkillGroupsOrder() {
     const active = this.getActiveProfile();
-    return active?.skillGroupsOrder || ['backend', 'architecture', 'database', 'quality', 'tools', 'frontend'];
+    return active?.skillGroupsOrder || ['backend', 'frontend', 'architecture', 'database', 'testing', 'tools-ai', 'libraries'];
   }
 }
 

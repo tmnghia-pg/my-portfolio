@@ -30,7 +30,7 @@ export function renderSkills(container) {
               <polyline points="16 18 22 12 16 6"></polyline>
               <polyline points="8 6 2 12 8 18"></polyline>
             </svg>
-            <span>Expertise</span>
+            <span>Technical Expertise</span>
           </div>
           <h2 class="section-title">${LanguageService.getUi('sections.skills')}</h2>
           <p class="section-subtitle">${LanguageService.getUi('sections.skillsSub')}</p>
@@ -40,15 +40,19 @@ export function renderSkills(container) {
           ${sortedGroups.map(grp => {
             const groupName = LanguageService.getText(grp.name);
             const groupSkills = (grp.items || []).map(id => itemsMap.get(id)).filter(Boolean);
+            const isBackend = grp.id === 'backend';
 
             return `
-              <div class="skill-cat-card">
-                <div class="skill-cat-title">${groupName}</div>
+              <div class="skill-cat-card ${isBackend ? 'skill-cat-card-primary' : ''}">
+                <div class="skill-cat-header">
+                  <div class="skill-cat-title">${groupName}</div>
+                  ${isBackend ? `<span class="badge badge-primary">Core Focus</span>` : ''}
+                </div>
                 <div class="tag-list">
                   ${groupSkills.map(skill => `
-                    <span class="tag ${skill.badge ? 'badge-primary' : ''}">
+                    <span class="tag ${skill.badge ? 'tag-highlight' : ''}">
                       ${skill.name}
-                      ${skill.badge ? `<span style="font-size:0.65rem;opacity:0.8;margin-left:4px">(${skill.badge})</span>` : ''}
+                      ${skill.badge ? `<span class="tag-badge-pill">${skill.badge}</span>` : ''}
                     </span>
                   `).join('')}
                 </div>

@@ -13,28 +13,33 @@ const UI_DICTIONARY = {
       contact: 'Liên hệ'
     },
     status: {
-      available: 'Sẵn sàng cho cơ hội Senior .NET Developer',
+      available: 'Định hướng: Senior .NET Developer / .NET Backend',
       active: 'Đang hoạt động',
       inProgress: 'Đang phát triển',
       archived: 'Đã lưu trữ',
       featured: 'Tiêu biểu'
     },
     projectTypes: {
-      professional: 'Doanh nghiệp (MISA)',
-      personal: 'Dự án cá nhân'
+      featured: 'Dự án Tiêu biểu',
+      enterprise: 'Doanh nghiệp (MISA)',
+      personal: 'Dự án cá nhân',
+      archived: 'Lưu trữ'
     },
     sections: {
       summary: 'Tóm tắt nghề nghiệp',
       experience: 'Kinh nghiệm làm việc',
-      experienceSub: 'Hành trình phát triển và đóng góp kỹ thuật tại doanh nghiệp',
-      projects: 'Dự án tiêu biểu',
-      projectsSub: 'Các hệ thống và giải pháp kỹ thuật đã trực tiếp tham gia xây dựng',
+      experienceSub: 'Hành trình chuyên môn và đóng góp kỹ thuật tại Công ty Cổ phần MISA (07/2023 – Hiện tại)',
+      projects: 'Dự án',
+      projectsSub: 'Các sản phẩm độc lập, giải pháp AI-first và nền tảng doanh nghiệp đã tham gia xây dựng',
+      featuredProjects: 'Dự án Tiêu biểu (Sản phẩm độc lập & AI-First)',
+      enterpriseProjects: 'Dự án Doanh nghiệp (Nền tảng MISA)',
       skills: 'Kỹ năng chuyên môn',
-      skillsSub: 'Nền tảng công nghệ, kiến trúc và công cụ hỗ trợ công việc',
-      education: 'Học vấn & Chứng chỉ',
-      educationSub: 'Bằng cấp kỹ sư chính quy và các chương trình đào tạo',
+      skillsSub: 'Nền tảng kỹ thuật Backend .NET, Frontend, kiến trúc và công cụ kỹ thuật',
+      education: 'Học vấn & Phát triển chuyên môn',
+      educationSub: 'Bằng cấp kỹ sư chính quy và chương trình đào tạo cán bộ nguồn',
       interests: 'Sở thích & Hoạt động phong trào',
-      interestsSub: 'Thể thao, âm nhạc, tinh thần tự học công nghệ và hoạt động phong trào đội nhóm'
+      interestsSub: 'Thể thao, âm nhạc, tinh thần tự học công nghệ và hoạt động phong trào đội ngũ',
+      softSkills: 'Kỹ năng mềm & Tinh thần làm việc'
     },
     actions: {
       viewResume: 'Chế độ CV A4',
@@ -47,33 +52,33 @@ const UI_DICTIONARY = {
       viewAllProjects: 'Xem tất cả dự án'
     },
     metrics: {
-      reportMetric: 'Đáp ứng ~90% mẫu báo cáo thực tế qua module tùy chỉnh',
-      advisorMetric: 'Đào tạo và hỗ trợ 3 nhân sự Fresher vượt qua thử việc',
+      reportMetric: 'Đáp ứng ~90% mẫu báo cáo thực tế qua Custom Reporting Engine',
+      advisorMetric: 'Đào tạo và hỗ trợ 3 Fresher vượt qua thử việc',
       architectureMetric: 'Thiết kế theo Clean Architecture & .NET 8 chuẩn mực'
     },
     technicalHighlights: {
-      title: 'Highlights & Leadership',
+      title: 'Technical Highlights',
       badge: 'Core Competencies',
       independent: {
         title: 'Independent Product Development',
-        desc: 'Độc lập nghiên cứu, thiết kế và phát triển SnapFox Print LLC từ đầu đến khi vận hành thực tế. Xây dựng storefront bán hàng kết hợp hệ thống SnapFoxFactory điều phối xưởng in khép kín.'
+        desc: 'Độc lập nghiên cứu, thiết kế và phát triển hệ thống SnapFox Print LLC từ đầu. Xây dựng giải pháp end-to-end gồm website đặt hàng và phần mềm SnapFoxFactory quản lý toàn bộ quy trình vận hành xưởng in.'
       },
       aiFirst: {
         title: 'AI-First Software Engineering',
-        desc: 'Ứng dụng AI Coding xuyên suốt quá trình phát triển TORVEN nhằm tối ưu tiến độ và chất lượng mã nguồn. Triển khai hoàn chỉnh CMS quản trị, tích hợp Zalo OA, cổng thanh toán và vận chuyển.'
+        desc: 'Ứng dụng AI Coding xuyên suốt quá trình phát triển TORVEN, từ phân tích yêu cầu đến triển khai. Hoàn thiện hệ thống CMS quản trị toàn diện, tích hợp Zalo OA và thanh toán trực tuyến.'
       },
       advisor: {
         title: 'Technical Advisor & Mentorship',
-        desc: 'Đảm nhận vai trò Technical Advisor (hoàn thành chương trình Cán bộ nguồn MISA). Trực tiếp đào tạo, giải đáp kỹ thuật và đồng hành giúp 3 Fresher vượt qua thử việc, tự tin đảm nhận dự án.'
+        desc: 'Đảm nhận vai trò Technical Advisor sau chương trình MISA – Cán bộ nguồn. Trực tiếp hướng dẫn và hỗ trợ 3 Fresher vượt qua thử việc, đồng thời định hướng tư duy kỹ thuật trong dự án.'
       },
       leadership: {
-        title: 'Team Leadership & Organization',
-        desc: 'Từng đảm nhiệm vai trò thủ quỹ và trưởng ban phong trào, chủ động tổ chức các hoạt động và giải đấu thể thao nội bộ. Khéo léo kết nối các thành viên, xây dựng tinh thần đồng đội tích cực và gắn kết.'
+        title: 'Team Organization & Engagement',
+        desc: 'Từng đảm nhiệm vai trò thủ quỹ và trưởng ban phong trào. Chủ động tổ chức giải đấu thể thao, sự kiện giao lưu và hoạt động nội bộ, góp phần xây dựng tinh thần đoàn kết và gắn kết đội nhóm.'
       }
     },
     footer: {
-      role: 'Kỹ sư phần mềm .NET & Giải pháp kỹ thuật',
-      builtWith: 'Xây dựng với Vanilla HTML, CSS & JavaScript ES Modules • Dữ liệu thuần JSON',
+      role: 'Fullstack Developer | .NET Backend Specialist',
+      builtWith: 'Xây dựng với Vanilla HTML, CSS & JavaScript ES Modules • Shared JSON Data Source',
       rights: 'Bản quyền nội dung thuộc về Trần Minh Nghĩa'
     }
   },
@@ -87,28 +92,33 @@ const UI_DICTIONARY = {
       contact: 'Contact'
     },
     status: {
-      available: 'Open for Senior .NET Developer Opportunities',
+      available: 'Target: Senior .NET Developer / .NET Backend',
       active: 'Active Production',
       inProgress: 'In Development',
       archived: 'Archived',
       featured: 'Featured'
     },
     projectTypes: {
-      professional: 'Enterprise (MISA)',
-      personal: 'Personal Project'
+      featured: 'Featured Product',
+      enterprise: 'Enterprise (MISA)',
+      personal: 'Personal Project',
+      archived: 'Archived'
     },
     sections: {
       summary: 'Professional Summary',
       experience: 'Work Experience',
-      experienceSub: 'Career journey and enterprise technical contributions',
-      projects: 'Featured Projects',
-      projectsSub: 'Enterprise and independent systems built with modern architectures',
+      experienceSub: 'Professional tenure and engineering contributions at MISA JSC (07/2023 – Present)',
+      projects: 'Projects',
+      projectsSub: 'Independent products, AI-first platforms, and enterprise solutions built with modern stacks',
+      featuredProjects: 'Featured Projects (Independent & AI-First Products)',
+      enterpriseProjects: 'Enterprise Projects (MISA Platforms)',
       skills: 'Technical Skills',
-      skillsSub: 'Technology stack, software architecture, and development tooling',
-      education: 'Education & Certifications',
-      educationSub: 'Formal engineering degree and leadership development programs',
+      skillsSub: 'Backend .NET core, frontend systems, architecture, and engineering toolchain',
+      education: 'Education & Professional Development',
+      educationSub: 'Formal engineering degree and key personnel management development programs',
       interests: 'Interests & Activities',
-      interestsSub: 'Sports, music, self-driven continuous learning, and team bonding'
+      interestsSub: 'Sports, music, self-driven continuous learning, and team engagement activities',
+      softSkills: 'Personal Strengths & Soft Skills'
     },
     actions: {
       viewResume: 'Resume A4 View',
@@ -122,32 +132,32 @@ const UI_DICTIONARY = {
     },
     metrics: {
       reportMetric: 'Fulfills ~90% of dynamic report formats via custom engine',
-      advisorMetric: 'Mentored & guided 3 Fresher engineers through onboarding',
+      advisorMetric: 'Mentored & guided 3 Fresher engineers through probation',
       architectureMetric: 'Robust Clean Architecture & .NET 8 implementation'
     },
     technicalHighlights: {
-      title: 'Highlights & Leadership',
+      title: 'Technical Highlights',
       badge: 'Core Competencies',
       independent: {
         title: 'Independent Product Development',
-        desc: 'Independently architected and built SnapFox Print LLC from ground up to live production. Delivered an e-commerce storefront alongside SnapFoxFactory to orchestrate automated factory fulfillment.'
+        desc: 'Independently researched, designed, and developed the SnapFox Print LLC platform from scratch. Built an end-to-end solution combining a customer ordering website and SnapFoxFactory software managing all print shop operations.'
       },
       aiFirst: {
         title: 'AI-First Software Engineering',
-        desc: 'Applied AI Coding across the TORVEN lifecycle to maximize delivery speed and code quality. Shipped a dynamic headless CMS integrated with Zalo OA, banking payments, and logistics services.'
+        desc: "Applied AI Coding throughout TORVEN's development lifecycle from requirement analysis to deployment. Delivered a comprehensive admin CMS with Zalo OA and online banking integration."
       },
       advisor: {
         title: 'Technical Advisor & Mentorship',
-        desc: 'Served as Technical Advisor (completed MISA Future Leader program). Coached and unblocked 3 Fresher developers through probation to become confident project contributors.'
+        desc: 'Served as Technical Advisor following the MISA Future Leader program. Directly mentored and guided 3 Fresher developers through probation while shaping engineering mindsets on project teams.'
       },
       leadership: {
-        title: 'Team Leadership & Organization',
-        desc: 'Served as team treasurer and movement lead, organizing athletic tournaments and team-building events. Strengthened workplace camaraderie and cultivated an active, collaborative team spirit.'
+        title: 'Team Organization & Engagement',
+        desc: 'Served as team treasurer and activities lead. Proactively organized athletic tournaments, networking events, and internal activities, fostering teamwork and team solidarity.'
       }
     },
     footer: {
-      role: '.NET Software Engineer & Technical Solutions',
-      builtWith: 'Built with Vanilla HTML, CSS & JavaScript ES Modules • Pure JSON data source',
+      role: 'Fullstack Developer | .NET Backend Specialist',
+      builtWith: 'Built with Vanilla HTML, CSS & JavaScript ES Modules • Shared JSON Data Source',
       rights: 'All profile content copyright Tran Minh Nghia'
     }
   }

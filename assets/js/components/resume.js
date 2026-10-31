@@ -1,4 +1,4 @@
-// Resume View Component (A4 Printable Document Layout)
+// Resume View Component (A4 ATS-Optimized Document Layout)
 
 import { dataService } from '../data-service.js';
 import { profileService } from '../profile-service.js';
@@ -11,10 +11,7 @@ export function renderResume(container) {
   const skillsData = dataService.getSkills();
   const education = dataService.getEducation();
   const certificates = dataService.getCertificates();
-  const interests = dataService.getInterests();
   const activeProfile = profileService.getActiveProfile();
-  const featuredProjectIds = profileService.getFeaturedProjectIds();
-  const skillGroupsOrder = profileService.getSkillGroupsOrder();
 
   const name = LanguageService.getText(profile?.name);
   const headline = LanguageService.getText(activeProfile?.headline || profile?.headline);
@@ -22,64 +19,76 @@ export function renderResume(container) {
   const location = LanguageService.getText(profile?.location);
   const phone = profile?.contact?.phone || '';
   const email = profile?.contact?.email || '';
+  const linkedin = profile?.contact?.linkedin;
+  const github = profile?.contact?.github;
+  const website = profile?.contact?.website || 'https://tmnghia-pg.github.io/my-portfolio/';
+  const avatarUrl = profile?.avatar || 'assets/images/avatar.png';
 
-  // Filter projects for resume based on featured ids: enterprise first, personal second
-  const resumeProjects = [...allProjects]
-    .filter(p => featuredProjectIds.includes(p.id) && p.status !== 'archived')
-    .sort((a, b) => {
-      const catPriority = { 'professional': 0, 'personal': 1 };
-      const priorityA = catPriority[a.category] ?? 1;
-      const priorityB = catPriority[b.category] ?? 1;
-      if (priorityA !== priorityB) return priorityA - priorityB;
-      return featuredProjectIds.indexOf(a.id) - featuredProjectIds.indexOf(b.id);
-    })
-    .slice(0, 5);
+  // Ordered Key Projects: SnapFox, TORVEN, MISA BUMAS, MISA LEKIMA, MISA Panda Online
+  const targetProjectIds = ['snapfox', 'torven', 'misa-bumas', 'misa-lekima', 'misa-panda-online'];
+  const resumeProjects = targetProjectIds
+    .map(id => allProjects.find(p => p.id === id))
+    .filter(Boolean);
 
   // Skill items map
   const itemsMap = new Map((skillsData?.items || []).map(i => [i.id, i.name]));
 
-  // Skill groups sorted
+  // Skill groups order: Backend, Frontend, Architecture, Database, Testing, Tools-AI, Libraries
+  const groupOrder = ['backend', 'frontend', 'architecture', 'database', 'testing', 'tools-ai', 'libraries'];
   const sortedSkillGroups = [...(skillsData?.groups || [])].sort((a, b) => {
-    const aIdx = skillGroupsOrder.indexOf(a.id);
-    const bIdx = skillGroupsOrder.indexOf(b.id);
-    if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx;
-    if (aIdx !== -1) return -1;
-    if (bIdx !== -1) return 1;
-    return 0;
+    const aIdx = groupOrder.indexOf(a.id);
+    const bIdx = groupOrder.indexOf(b.id);
+    return (aIdx === -1 ? 99 : aIdx) - (bIdx === -1 ? 99 : bIdx);
   });
 
   container.innerHTML = `
     <article class="resume-view-container" id="resume-document">
-      <!-- Resume Header -->
+      <!-- 1. Resume Header with Avatar Photo Block -->
       <header class="resume-header">
-        <div class="resume-title-block">
-          <h1>${name}</h1>
-          <div class="resume-headline">${headline}</div>
+        <div class="resume-header-left">
+          <!-- Avatar Block in Resume -->
+          <div class="resume-avatar-frame">
+            <img src="${avatarUrl}" alt="${name}" class="resume-avatar-img" onerror="this.parentElement.style.display='none'">
+          </div>
+
+          <div class="resume-title-block">
+            <h1 class="resume-name">${name}</h1>
+            <div class="resume-headline">${headline}</div>
+            <div class="resume-experience-tag">
+              ${LanguageService.getText({
+                vi: 'Hơn 3 năm kinh nghiệm (07/2023 – Hiện tại) • Technical Advisor từ 10/2025',
+                en: '3+ Years Experience (07/2023 – Present) • Technical Advisor since 10/2025'
+              })}
+            </div>
+          </div>
         </div>
 
         <div class="resume-contacts-grid">
           <div><strong>Email:</strong> ${email}</div>
-          <div><strong>Điện thoại / Phone:</strong> ${phone}</div>
-          <div><strong>Địa điểm / Location:</strong> ${location}</div>
+          <div><strong>${LanguageService.getText({ vi: 'Điện thoại', en: 'Phone' })}:</strong> ${phone}</div>
+          <div><strong>${LanguageService.getText({ vi: 'Địa điểm', en: 'Location' })}:</strong> ${location}</div>
+          ${website ? `<div><strong>Web CV:</strong> <a href="${website}" target="_blank" class="resume-link">tmnghia-pg.github.io/my-portfolio</a></div>` : ''}
+          ${github ? `<div><strong>GitHub:</strong> <a href="${github}" target="_blank" class="resume-link">github.com/tmnghia-pg</a></div>` : ''}
+          ${linkedin ? `<div><strong>LinkedIn:</strong> <a href="${linkedin}" target="_blank" class="resume-link">${linkedin}</a></div>` : ''}
         </div>
       </header>
 
-      <!-- Professional Summary -->
+      <!-- 2. Professional Summary -->
       <section class="resume-section">
-        <div class="resume-section-title">
+        <h2 class="resume-section-title">
           <span>${LanguageService.getUi('sections.summary')}</span>
-        </div>
-        <div style="font-size:0.875rem;line-height:1.6;color:var(--text-secondary)">
-          ${(summary || '').split('\n\n').filter(Boolean).map(p => `<p style="margin-bottom:0.4rem">${p}</p>`).join('')}
+        </h2>
+        <div class="resume-summary-text">
+          ${(summary || '').split('\n\n').filter(Boolean).map(p => `<p>${p}</p>`).join('')}
         </div>
       </section>
 
-      <!-- Technical Skills Matrix -->
+      <!-- 3. Technical Skills -->
       <section class="resume-section">
-        <div class="resume-section-title">
+        <h2 class="resume-section-title">
           <span>${LanguageService.getUi('sections.skills')}</span>
-        </div>
-        <div class="resume-skills-grid">
+        </h2>
+        <div class="resume-skills-list">
           ${sortedSkillGroups.map(grp => {
             const grpName = LanguageService.getText(grp.name);
             const skillNames = (grp.items || []).map(id => itemsMap.get(id)).filter(Boolean).join(', ');
@@ -93,66 +102,89 @@ export function renderResume(container) {
         </div>
       </section>
 
-      <!-- Work Experience -->
+      <!-- 4. Work Experience -->
       <section class="resume-section">
-        <div class="resume-section-title">
+        <h2 class="resume-section-title">
           <span>${LanguageService.getUi('sections.experience')}</span>
-        </div>
+        </h2>
 
         ${experiences.map(exp => {
           const position = LanguageService.getText(exp.position);
           const period = `${exp.startDate} – ${exp.isCurrent ? (LanguageService.getText({ vi: 'Hiện tại', en: 'Present' })) : exp.endDate}`;
+          const groups = exp.responsibilityGroups || [];
 
           return `
             <div class="resume-item">
               <div class="resume-item-header">
-                <span>${position}</span>
-                <span>${period}</span>
+                <span class="resume-item-title">${position}</span>
+                <span class="resume-item-period">${period}</span>
               </div>
               <div class="resume-item-sub">
-                <span>${exp.company}</span>
-                <span>Hà Nội, Việt Nam</span>
+                <span>${exp.company} • ${LanguageService.getText(exp.location || { vi: 'Hà Nội, Việt Nam', en: 'Hanoi, Vietnam' })}</span>
+                <span class="resume-advisor-badge">
+                  ${LanguageService.getText({
+                    vi: 'Technical Advisor (Bổ nhiệm từ 10/2025)',
+                    en: 'Technical Advisor (Appointed 10/2025)'
+                  })}
+                </span>
               </div>
-              <ul class="resume-bullets">
-                ${exp.highlights.map(hl => `
-                  <li>${LanguageService.getText(hl)}</li>
-                `).join('')}
-              </ul>
+
+              ${groups.length ? `
+                <div class="resume-resp-groups">
+                  ${groups.map(grp => {
+                    const grpTitle = LanguageService.getText(grp.title);
+                    const items = grp.items || [];
+                    return `
+                      <div class="resume-resp-group">
+                        <div class="resume-resp-title">${grpTitle}:</div>
+                        <ul class="resume-bullets">
+                          ${items.map(item => `<li>${LanguageService.getText(item)}</li>`).join('')}
+                        </ul>
+                      </div>
+                    `;
+                  }).join('')}
+                </div>
+              ` : `
+                <ul class="resume-bullets">
+                  ${(exp.highlights || []).map(hl => `<li>${LanguageService.getText(hl)}</li>`).join('')}
+                </ul>
+              `}
             </div>
           `;
         }).join('')}
       </section>
 
-      <!-- Key Projects -->
+      <!-- 5. Key Projects -->
       <section class="resume-section">
-        <div class="resume-section-title">
-          <span>${LanguageService.getUi('sections.projects')}</span>
-        </div>
+        <h2 class="resume-section-title">
+          <span>${LanguageService.getText({ vi: 'Dự án tiêu biểu (Key Projects)', en: 'Key Projects' })}</span>
+        </h2>
 
         ${resumeProjects.map(prj => {
           const prjRole = LanguageService.getText(prj.role);
-          const prjDesc = LanguageService.getText(prj.description);
-          const techList = (prj.technologies || []).join(', ');
-          const highlights = prj.highlights ? LanguageService.getText(prj.highlights) : [];
-          const isEnterprise = prj.category === 'professional';
-          const typeLabel = isEnterprise ? LanguageService.getUi('projectTypes.professional') : LanguageService.getUi('projectTypes.personal');
+          const prjDesc = LanguageService.getText(prj.resumeDescription || prj.description);
+          const techList = (prj.technologies || []).map(t => itemsMap.get(t) || t).join(', ');
+          const highlights = prj.resumeHighlights 
+            ? LanguageService.getText(prj.resumeHighlights)
+            : (prj.highlights ? LanguageService.getText(prj.highlights) : []);
+          const isEnterprise = prj.category === 'enterprise';
+          const typeLabel = isEnterprise ? LanguageService.getUi('projectTypes.enterprise') : LanguageService.getUi('projectTypes.featured');
           const typeBadgeClass = isEnterprise ? 'resume-type-enterprise' : 'resume-type-personal';
-          const typeIcon = isEnterprise ? '🏢' : '🚀';
 
           return `
-            <div class="resume-item">
+            <div class="resume-item resume-project-item">
               <div class="resume-item-header">
                 <span>
-                  ${prj.name}
-                  <span class="resume-badge-type ${typeBadgeClass}">${typeIcon} ${typeLabel}</span>
-                  <span style="font-weight:400;color:#64748b;font-size:0.8rem">(${LanguageService.getText(prj.tagline)})</span>
+                  <strong>${prj.name}</strong>
+                  <span class="resume-badge-type ${typeBadgeClass}">${typeLabel}</span>
+                  <span class="resume-prj-tagline">(${LanguageService.getText(prj.tagline)})</span>
                 </span>
-                <span style="font-size:0.75rem;font-family:var(--font-mono)">${prjRole}</span>
+                <span class="resume-prj-role">${prjRole}</span>
               </div>
-              <div style="font-size:0.75rem;color:#0284c7;font-family:var(--font-mono);margin-bottom:3px">
-                <strong>Tech Stack:</strong> ${techList}
+              <div class="resume-prj-tech">
+                <strong>Tech:</strong> ${techList}
               </div>
-              <p style="font-size:0.8rem;color:#475569;margin-bottom:3px;line-height:1.4">${prjDesc}</p>
+              <p class="resume-prj-desc">${prjDesc}</p>
               ${highlights && highlights.length ? `
                 <ul class="resume-bullets">
                   ${highlights.map(hl => `<li>${hl}</li>`).join('')}
@@ -163,45 +195,64 @@ export function renderResume(container) {
         }).join('')}
       </section>
 
-      <!-- Education & Credentials -->
+      <!-- 6. Education & Professional Development -->
       <section class="resume-section">
-        <div class="resume-section-title">
+        <h2 class="resume-section-title">
           <span>${LanguageService.getUi('sections.education')}</span>
-        </div>
+        </h2>
 
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+        <div class="resume-edu-grid">
           <div>
-            ${education.map(edu => `
-              <div style="font-size:0.85rem;font-weight:700;color:#0F172A">${edu.institution}</div>
-              <div style="font-size:0.75rem;color:var(--primary);font-weight:600">
-                ${LanguageService.getText(edu.degree)} • ${LanguageService.getText(edu.grade)} (${edu.graduationYear})
-              </div>
-            `).join('')}
+            <div class="resume-sub-heading">${LanguageService.getText({ vi: 'Học vấn chính quy', en: 'Formal Education' })}:</div>
+            ${education.map(edu => {
+              const institution = LanguageService.getText(edu.institutionEn && LanguageService.getText({ vi: edu.institution, en: edu.institutionEn }) || edu.institution);
+              return `
+                <div class="resume-edu-entry">
+                  <div class="resume-edu-name"><strong>${institution}</strong></div>
+                  <div class="resume-edu-meta">
+                    ${LanguageService.getText(edu.degree)} • ${LanguageService.getText(edu.grade)} (${edu.graduationYear})
+                  </div>
+                </div>
+              `;
+            }).join('')}
           </div>
 
           <div>
-            ${certificates.map(cert => `
-              <div style="font-size:0.85rem;font-weight:700;color:#0F172A">${LanguageService.getText(cert.name)}</div>
-              <div style="font-size:0.75rem;color:var(--primary);font-weight:600">
-                ${cert.issuer} ${cert.year ? `• ${cert.year}` : ''}
-              </div>
-            `).join('')}
+            <div class="resume-sub-heading">${LanguageService.getText({ vi: 'Chứng chỉ & Phát triển chuyên môn', en: 'Certifications & Professional Development' })}:</div>
+            ${certificates.map(cert => {
+              const issuer = LanguageService.getText(cert.issuerEn && LanguageService.getText({ vi: cert.issuer, en: cert.issuerEn }) || cert.issuer);
+              return `
+                <div class="resume-edu-entry">
+                  <div class="resume-edu-name"><strong>${LanguageService.getText(cert.name)}</strong></div>
+                  <div class="resume-edu-meta">
+                    ${issuer} ${cert.year ? `(${cert.year})` : ''}
+                  </div>
+                </div>
+              `;
+            }).join('')}
           </div>
         </div>
       </section>
 
-      <!-- Interests & Activities (Nhãn sở thích trên CV) -->
-      <section class="resume-section" style="margin-bottom:0">
-        <div class="resume-section-title">
-          <span>${LanguageService.getUi('sections.interests')}</span>
-        </div>
-        <div class="resume-interests-wrap">
-          ${interests.map(item => `
-            <span class="resume-interest-tag">
-              <span class="resume-interest-icon">${item.icon}</span>
-              <span>${LanguageService.getText(item.name)}</span>
-            </span>
-          `).join('')}
+      <!-- 7. Personal Strengths / Soft Skills (Rõ ràng & Giàu thông tin) -->
+      <section class="resume-section resume-softskills-section">
+        <h2 class="resume-section-title">
+          <span>${LanguageService.getUi('sections.softSkills')}</span>
+        </h2>
+        <div class="resume-softskills-box">
+          <div class="resume-softskills-pills">
+            <span class="resume-softskill-chip">🤝 <strong>Team Collaboration:</strong> ${LanguageService.getText({ vi: 'Làm việc nhóm & gắn kết đội ngũ', en: 'Cross-functional teamwork' })}</span>
+            <span class="resume-softskill-chip">🚀 <strong>Proactiveness:</strong> ${LanguageService.getText({ vi: 'Chủ động đề xuất giải pháp kỹ thuật', en: 'Proactive ownership' })}</span>
+            <span class="resume-softskill-chip">💡 <strong>Problem-solving:</strong> ${LanguageService.getText({ vi: 'Tư duy phân tích nguyên nhân gốc rễ', en: 'Analytical root-cause debugging' })}</span>
+            <span class="resume-softskill-chip">👥 <strong>Mentorship:</strong> ${LanguageService.getText({ vi: 'Cố vấn kỹ thuật & đào tạo Fresher', en: 'Technical advisor & mentoring' })}</span>
+            <span class="resume-softskill-chip">🏆 <strong>Team Engagement:</strong> ${LanguageService.getText({ vi: 'Tổ chức giải đấu thể thao & hoạt động nội bộ', en: 'Team-building & sports events' })}</span>
+          </div>
+          <div class="resume-softskills-summary">
+            ${LanguageService.getText({
+              vi: 'Khả năng độc lập phân tích và giải quyết bài toán phức tạp; tinh thần trách nhiệm cao; có năng lực dẫn dắt, kèm cặp nhân sự trẻ và tích cực xây dựng văn hóa đoàn kết tập thể.',
+              en: 'Independent problem-solving capacity with high ownership; proven ability to mentor junior engineers and foster cohesive team culture through collaborative activities.'
+            })}
+          </div>
         </div>
       </section>
     </article>

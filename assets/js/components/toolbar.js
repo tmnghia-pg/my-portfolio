@@ -44,7 +44,7 @@ export function renderToolbar(container) {
             data-profile-id="${p.id}"
             title="${LanguageService.getText(p.name)}"
           >
-            ${p.id === 'dotnet-backend' ? '.NET' : 'Full-stack'}
+            ${p.id === 'dotnet-backend' ? '.NET Specialist' : 'Fullstack'}
           </button>
         `).join('')}
       </div>

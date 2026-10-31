@@ -6,6 +6,18 @@
     gap: var(--space-8);
   }
 
+  .projects-featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-enterprise-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skill-cat-card-primary {
+    grid-column: span 1;
+  }
+
   .edu-cert-grid {
     grid-template-columns: 1fr;
   }
@@ -17,19 +29,32 @@
   }
 
   .site-header .nav-links {
-    display: none; /* Can be accessed via floating or mobile scroll */
+    display: none;
   }
 
   .section {
-    padding-top: var(--space-10);
-    padding-bottom: var(--space-10);
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
   }
 
   .hero-name {
-    font-size: 2.25rem;
+    font-size: 28px;
+  }
+
+  .hero-headline {
+    font-size: 1.05rem;
+  }
+
+  .highlights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .responsibility-groups-grid {
+    grid-template-columns: 1fr;
   }
 
   .projects-grid,
+  .projects-enterprise-grid,
   .skills-grid {
     grid-template-columns: 1fr;
   }
@@ -46,22 +71,40 @@
     left: 4px;
   }
 
+  /* Resume View on Mobile */
   .resume-view-container {
-    padding: var(--space-5);
+    padding: 24px 18px;
     margin: var(--space-4);
   }
 
   .resume-header {
     flex-direction: column;
+    align-items: flex-start;
     gap: var(--space-3);
+  }
+
+  .resume-header-left {
+    align-items: flex-start;
+    gap: 12px;
   }
 
   .resume-contacts-grid {
     align-items: flex-start;
+    text-align: left;
   }
 
-  .resume-skills-grid {
+  .resume-edu-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .resume-skill-row {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .resume-skill-label {
+    min-width: auto;
   }
 
   .floating-bar {
@@ -83,6 +126,10 @@
 }
 
 @media (max-width: 480px) {
+  .hero-header-line {
+    gap: var(--space-2);
+  }
+
   .hero-contacts {
     flex-direction: column;
   }
@@ -103,5 +150,15 @@
 
   .floating-bar .toolbar-text-label {
     display: none;
+  }
+
+  .avatar-hover-popup {
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px) scale(0.96);
+  }
+
+  .brand-avatar-wrap:hover .avatar-hover-popup,
+  .hero-avatar-wrap:hover .avatar-hover-popup {
+    transform: translateX(-50%) translateY(0) scale(1);
   }
 }

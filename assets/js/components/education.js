@@ -1,4 +1,4 @@
-// Education & Certifications Component
+// Education & Professional Development Component
 
 import { dataService } from '../data-service.js';
 import { LanguageService } from '../language-service.js';
@@ -9,7 +9,7 @@ export function renderEducation(container) {
   const interests = dataService.getInterests();
 
   container.innerHTML = `
-    <section id="education" class="section" aria-label="Học vấn và chứng chỉ">
+    <section id="education" class="section" aria-label="Học vấn và phát triển chuyên môn">
       <div class="container">
         <div class="section-header">
           <div class="section-label">
@@ -24,9 +24,9 @@ export function renderEducation(container) {
         </div>
 
         <div class="edu-cert-grid">
-          <!-- Education Column -->
+          <!-- Column 1: Formal Education -->
           <div>
-            <h3 style="font-size:var(--text-lg);font-weight:700;margin-bottom:var(--space-4);color:var(--text-primary)">
+            <h3 class="edu-column-heading">
               ${LanguageService.getText({ vi: 'Học vấn chính quy', en: 'Formal Education' })}
             </h3>
             <div style="display:flex;flex-direction:column;gap:var(--space-4)">
@@ -34,43 +34,49 @@ export function renderEducation(container) {
                 const degree = LanguageService.getText(edu.degree);
                 const grade = LanguageService.getText(edu.grade);
                 const highlights = LanguageService.getText(edu.highlights);
+                const institution = LanguageService.getText(edu.institutionEn && LanguageService.getText({ vi: edu.institution, en: edu.institutionEn }) || edu.institution);
 
                 return `
-                  <div class="card">
-                    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-2)">
-                      <h4 style="font-size:var(--text-base);font-weight:700;color:var(--text-primary)">${edu.institution}</h4>
+                  <div class="card edu-card">
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-2);gap:var(--space-2)">
+                      <h4 style="font-size:var(--text-base);font-weight:700;color:var(--text-primary)">${institution}</h4>
                       <span class="badge badge-primary">${edu.graduationYear}</span>
                     </div>
                     <div style="font-size:var(--text-sm);color:var(--primary);font-weight:600;margin-bottom:var(--space-2)">
                       ${degree} • ${grade}
                     </div>
-                    <p style="font-size:var(--text-xs);color:var(--text-secondary);line-height:1.6">${highlights}</p>
+                    <p style="font-size:var(--text-xs);color:var(--text-secondary);line-height:1.6;margin-bottom:0">${highlights}</p>
                   </div>
                 `;
               }).join('')}
             </div>
           </div>
 
-          <!-- Certificates Column -->
+          <!-- Column 2: Professional Development & Certifications -->
           <div>
-            <h3 style="font-size:var(--text-lg);font-weight:700;margin-bottom:var(--space-4);color:var(--text-primary)">
-              ${LanguageService.getText({ vi: 'Chứng chỉ & Chương trình', en: 'Certificates & Programs' })}
+            <h3 class="edu-column-heading">
+              ${LanguageService.getText({ vi: 'Chứng chỉ & Phát triển chuyên môn', en: 'Certifications & Professional Development' })}
             </h3>
             <div style="display:flex;flex-direction:column;gap:var(--space-4)">
               ${certificates.map(cert => {
                 const name = LanguageService.getText(cert.name);
+                const category = cert.category ? LanguageService.getText(cert.category) : '';
                 const description = LanguageService.getText(cert.description);
+                const issuer = LanguageService.getText(cert.issuerEn && LanguageService.getText({ vi: cert.issuer, en: cert.issuerEn }) || cert.issuer);
 
                 return `
-                  <div class="card">
-                    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-2)">
-                      <h4 style="font-size:var(--text-base);font-weight:700;color:var(--text-primary)">${name}</h4>
+                  <div class="card cert-card">
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-2);gap:var(--space-2)">
+                      <div>
+                        <h4 style="font-size:var(--text-base);font-weight:700;color:var(--text-primary)">${name}</h4>
+                        ${category ? `<span class="badge badge-subtle" style="margin-top:2px">${category}</span>` : ''}
+                      </div>
                       ${cert.year ? `<span class="badge badge-primary">${cert.year}</span>` : ''}
                     </div>
                     <div style="font-size:var(--text-sm);color:var(--primary);font-weight:600;margin-bottom:var(--space-2)">
-                      ${cert.issuer}
+                      ${issuer}
                     </div>
-                    <p style="font-size:var(--text-xs);color:var(--text-secondary);line-height:1.6">${description}</p>
+                    <p style="font-size:var(--text-xs);color:var(--text-secondary);line-height:1.6;margin-bottom:0">${description}</p>
                   </div>
                 `;
               }).join('')}
@@ -78,8 +84,8 @@ export function renderEducation(container) {
           </div>
         </div>
 
-        <!-- Interests & Activities (Nhãn sở thích & Hoạt động) -->
-        <div class="interests-container" style="margin-top:var(--space-8)">
+        <!-- Interests & Activities -->
+        <div class="interests-container" style="margin-top:var(--space-10)">
           <div class="card" style="padding:var(--space-6)">
             <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4)">
               <div>
@@ -91,7 +97,7 @@ export function renderEducation(container) {
                   ${LanguageService.getUi('sections.interestsSub')}
                 </p>
               </div>
-              <span class="badge badge-primary">Work-Life Balance & Team Engagement</span>
+              <span class="badge badge-primary">Team Engagement & Well-being</span>
             </div>
 
             <div class="interest-chips-grid">

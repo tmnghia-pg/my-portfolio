@@ -6,14 +6,14 @@
   "defaultTheme": "minimal",
   "metadata": {
     "vi": {
-      "title": "Trần Minh Nghĩa | .NET Developer Portfolio & CV",
-      "description": "Hồ sơ năng lực và CV chuyên môn của Trần Minh Nghĩa - Lập trình viên .NET, Backend & Full-stack tại Hà Nội.",
-      "keywords": ".NET Developer, ASP.NET Core, C#, Clean Architecture, Trần Minh Nghĩa, Senior .NET Developer, MISA"
+      "title": "Trần Minh Nghĩa | Fullstack Developer | .NET Backend Specialist",
+      "description": "Hồ sơ năng lực chuyên môn của Trần Minh Nghĩa - Fullstack Developer | .NET Backend Specialist với hơn 3 năm kinh nghiệm (.NET 8, ASP.NET Core, Clean Architecture, Vue.js, Next.js).",
+      "keywords": ".NET Developer, Backend Developer, Fullstack Developer, .NET 8, ASP.NET Core, C#, Clean Architecture, Trần Minh Nghĩa, MISA, Senior .NET Developer"
     },
     "en": {
-      "title": "Tran Minh Nghia | .NET Developer Portfolio & CV",
-      "description": "Professional engineering portfolio and curriculum vitae of Tran Minh Nghia - .NET Developer, Backend & Full-stack in Hanoi, Vietnam.",
-      "keywords": ".NET Developer, ASP.NET Core, C#, Clean Architecture, Tran Minh Nghia, Senior .NET Developer, MISA"
+      "title": "Tran Minh Nghia | Fullstack Developer | .NET Backend Specialist",
+      "description": "Professional engineering portfolio and curriculum vitae of Tran Minh Nghia - Fullstack Developer | .NET Backend Specialist with 3+ years of experience (.NET 8, ASP.NET Core, Clean Architecture, Vue.js, Next.js).",
+      "keywords": ".NET Developer, Backend Developer, Fullstack Developer, .NET 8, ASP.NET Core, C#, Clean Architecture, Tran Minh Nghia, MISA, Senior .NET Developer"
     }
   }
 }

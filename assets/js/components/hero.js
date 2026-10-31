@@ -12,27 +12,58 @@ export function renderHero(container) {
   const activeProfileConfig = profileService.getActiveProfile();
 
   const name = LanguageService.getText(profile?.name);
+  const initials = name ? name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase() : 'MN';
   const headline = LanguageService.getText(activeProfileConfig?.headline || profile?.headline);
   const summary = LanguageService.getText(activeProfileConfig?.summary || profile?.summary);
   const location = LanguageService.getText(profile?.location);
   const phone = profile?.contact?.phone || '';
   const email = profile?.contact?.email || '';
+  const linkedin = profile?.contact?.linkedin;
+  const github = profile?.contact?.github;
+  const website = profile?.contact?.website;
+  const avatarUrl = profile?.avatar || 'assets/images/avatar.png';
 
   container.innerHTML = `
     <section id="hero" class="hero-section" aria-label="Giới thiệu bản thân">
       <div class="container">
         <div class="hero-grid">
-          <!-- Left Column -->
+          <!-- Left Column: Identity & Contact -->
           <div class="hero-main">
-            <div class="hero-status-pill">
-              <span class="status-dot"></span>
-              <span>${LanguageService.getUi('status.available')}</span>
+            <div class="hero-header-line">
+              <!-- Avatar with hover popup preview -->
+              <div class="hero-avatar-wrap">
+                <div class="hero-avatar">
+                  <img src="${avatarUrl}" alt="${name}" class="hero-avatar-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                  <span class="hero-avatar-fallback" style="display:none">${initials}</span>
+                </div>
+                <!-- Large Photo Hover Popup -->
+                <div class="avatar-hover-popup" role="tooltip">
+                  <div class="avatar-hover-photo-wrap">
+                    <img src="${avatarUrl}" alt="${name}" class="avatar-hover-photo">
+                  </div>
+                  <div class="avatar-hover-info">
+                    <div class="avatar-hover-name">${name}</div>
+                    <div class="avatar-hover-role">${headline}</div>
+                    <div class="avatar-hover-badge">
+                      ${LanguageService.getText({
+                        vi: 'Hơn 3 năm kinh nghiệm • Technical Advisor từ 10/2025',
+                        en: '3+ Years Exp • Technical Advisor since 10/2025'
+                      })}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hero-status-pill">
+                <span class="status-dot"></span>
+                <span>${LanguageService.getUi('status.available')}</span>
+              </div>
             </div>
 
             <h1 class="hero-name">${name}</h1>
             <div class="hero-headline">${headline}</div>
             <div class="hero-summary">
-              ${(summary || '').split('\n\n').filter(Boolean).map(p => `<p style="margin-bottom:0.75rem">${p}</p>`).join('')}
+              ${(summary || '').split('\n\n').filter(Boolean).map(p => `<p>${p}</p>`).join('')}
             </div>
 
             <div class="hero-contacts">
@@ -58,10 +89,41 @@ export function renderHero(container) {
                 </svg>
                 <span>${location}</span>
               </div>
+
+              ${website ? `
+                <a href="${website}" target="_blank" rel="noopener noreferrer" class="contact-chip" title="CV / Portfolio Website">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  </svg>
+                  <span>tmnghia-pg.github.io</span>
+                </a>
+              ` : ''}
+
+              ${github ? `
+                <a href="${github}" target="_blank" rel="noopener noreferrer" class="contact-chip" title="GitHub Profile">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+              ` : ''}
+
+              ${linkedin ? `
+                <a href="${linkedin}" target="_blank" rel="noopener noreferrer" class="contact-chip" title="LinkedIn Profile">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                  <span>LinkedIn</span>
+                </a>
+              ` : ''}
             </div>
 
             <div class="hero-actions">
-              <button id="hero-btn-resume" class="btn btn-primary">
+              <button id="hero-btn-resume" class="btn btn-primary" aria-label="${LanguageService.getUi('actions.viewResume')}">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                   <polyline points="14 2 14 8 20 8"></polyline>
@@ -69,7 +131,7 @@ export function renderHero(container) {
                 <span>${LanguageService.getUi('actions.viewResume')}</span>
               </button>
 
-              <button id="hero-btn-print" class="btn btn-outline">
+              <button id="hero-btn-print" class="btn btn-outline" aria-label="${LanguageService.getUi('actions.printPdf')}">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="6 9 6 2 18 2 18 9"></polyline>
                   <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
@@ -80,7 +142,7 @@ export function renderHero(container) {
             </div>
           </div>
 
-          <!-- Right Column / Technical Highlights -->
+          <!-- Right Column / Technical Highlights (2-column responsive grid) -->
           <div class="hero-sidebar">
             <div class="hero-card">
               <div class="hero-card-header">
@@ -88,36 +150,45 @@ export function renderHero(container) {
                 <span class="badge badge-primary">${LanguageService.getUi('technicalHighlights.badge')}</span>
               </div>
 
-              <div class="metrics-list">
-                <div class="metric-item">
-                  <div class="metric-icon">🚀</div>
-                  <div class="metric-details">
-                    <span class="metric-value">${LanguageService.getUi('technicalHighlights.independent.title')}</span>
-                    <span class="metric-label">${LanguageService.getUi('technicalHighlights.independent.desc')}</span>
+              <div class="highlights-grid">
+                <!-- 1. Independent Product Development -->
+                <div class="highlight-item">
+                  <div class="highlight-icon">🚀</div>
+                  <div class="highlight-details">
+                    <span class="highlight-title">${LanguageService.getUi('technicalHighlights.independent.title')}</span>
+                    <span class="highlight-desc">${LanguageService.getUi('technicalHighlights.independent.desc')}</span>
                   </div>
                 </div>
 
-                <div class="metric-item">
-                  <div class="metric-icon">⚡</div>
-                  <div class="metric-details">
-                    <span class="metric-value">${LanguageService.getUi('technicalHighlights.aiFirst.title')}</span>
-                    <span class="metric-label">${LanguageService.getUi('technicalHighlights.aiFirst.desc')}</span>
+                <!-- 2. AI-First Software Engineering -->
+                <div class="highlight-item">
+                  <div class="highlight-icon">⚡</div>
+                  <div class="highlight-details">
+                    <span class="highlight-title">${LanguageService.getUi('technicalHighlights.aiFirst.title')}</span>
+                    <span class="highlight-desc">${LanguageService.getUi('technicalHighlights.aiFirst.desc')}</span>
                   </div>
                 </div>
 
-                <div class="metric-item">
-                  <div class="metric-icon">👥</div>
-                  <div class="metric-details">
-                    <span class="metric-value">${LanguageService.getUi('technicalHighlights.advisor.title')}</span>
-                    <span class="metric-label">${LanguageService.getUi('technicalHighlights.advisor.desc')}</span>
+                <!-- 3. Technical Advisor & Mentorship -->
+                <div class="highlight-item">
+                  <div class="highlight-icon">👥</div>
+                  <div class="highlight-details">
+                    <span class="highlight-title">${LanguageService.getUi('technicalHighlights.advisor.title')}</span>
+                    <span class="highlight-desc">
+                      ${LanguageService.getText({
+                        vi: 'Đảm nhận vai trò Technical Advisor từ 10/2025 sau chương trình MISA – Cán bộ nguồn. Trực tiếp hướng dẫn và hỗ trợ 3 Fresher vượt qua thử việc, đồng thời định hướng tư duy kỹ thuật trong dự án.',
+                        en: 'Served as Technical Advisor since October 2025 following the MISA Future Leader program. Directly mentored and guided 3 Fresher developers through probation while shaping engineering mindsets on project teams.'
+                      })}
+                    </span>
                   </div>
                 </div>
 
-                <div class="metric-item">
-                  <div class="metric-icon">🤝</div>
-                  <div class="metric-details">
-                    <span class="metric-value">${LanguageService.getUi('technicalHighlights.leadership.title')}</span>
-                    <span class="metric-label">${LanguageService.getUi('technicalHighlights.leadership.desc')}</span>
+                <!-- 4. Team Organization & Engagement -->
+                <div class="highlight-item">
+                  <div class="highlight-icon">🤝</div>
+                  <div class="highlight-details">
+                    <span class="highlight-title">${LanguageService.getUi('technicalHighlights.leadership.title')}</span>
+                    <span class="highlight-desc">${LanguageService.getUi('technicalHighlights.leadership.desc')}</span>
                   </div>
                 </div>
               </div>
@@ -132,11 +203,13 @@ export function renderHero(container) {
   const chipEmail = container.querySelector('#chip-email');
   if (chipEmail) {
     chipEmail.onclick = () => copyToClipboard(email, `${LanguageService.getUi('actions.copyDone')} (${email})`);
+    chipEmail.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); chipEmail.click(); } };
   }
 
   const chipPhone = container.querySelector('#chip-phone');
   if (chipPhone) {
     chipPhone.onclick = () => copyToClipboard(phone, `${LanguageService.getUi('actions.copyDone')} (${phone})`);
+    chipPhone.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); chipPhone.click(); } };
   }
 
   const btnResume = container.querySelector('#hero-btn-resume');

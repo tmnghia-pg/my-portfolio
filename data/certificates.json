@@ -5,13 +5,18 @@
       "id": "english-b1",
       "name": {
         "vi": "Chứng nhận Trình độ tiếng Anh B1",
-        "en": "English Proficiency B1"
+        "en": "English Proficiency B1 Certificate"
+      },
+      "category": {
+        "vi": "Chứng chỉ Ngoại ngữ",
+        "en": "Language Certification"
       },
       "issuer": "Đại học Giao thông Vận tải",
+      "issuerEn": "University of Transport and Communications",
       "year": 2023,
       "description": {
-        "vi": "Đọc hiểu tài liệu kỹ thuật chuyên ngành công nghệ thông tin tương đối tốt, giao tiếp kỹ thuật nền tảng.",
-        "en": "Strong reading comprehension of technical specifications and documentation; professional baseline communication."
+        "vi": "Đọc hiểu tài liệu kỹ thuật chuyên ngành công nghệ thông tin và giao tiếp nền tảng.",
+        "en": "Technical documentation reading comprehension and professional baseline communication."
       }
     },
     {
@@ -20,11 +25,16 @@
         "vi": "MISA – Cán bộ nguồn",
         "en": "MISA Management Development Program"
       },
+      "category": {
+        "vi": "Chương trình Phát triển Chuyên môn",
+        "en": "Professional Development Program"
+      },
       "issuer": "Công ty Cổ phần MISA",
+      "issuerEn": "MISA Joint Stock Company",
       "year": 2026,
       "description": {
-        "vi": "Chương trình đào tạo và quy hoạch cán bộ kế cận nòng cốt dành cho nhân sự định hướng phát triển kỹ thuật và quản lý đội ngũ.",
-        "en": "Leadership and key personnel development program for engineers targeted for technical leadership and management track."
+        "vi": "Chương trình đào tạo và quy hoạch cán bộ kế cận nòng cốt, định hướng phát triển kỹ thuật và cố vấn đội ngũ (Technical Advisor).",
+        "en": "Key leadership and technical talent development program for engineers targeted for technical advisory and mentorship tracks."
       }
     }
   ]
