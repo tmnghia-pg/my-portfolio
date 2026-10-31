@@ -82,7 +82,7 @@ body {
   transition: background-color var(--transition-normal), color var(--transition-normal);
   min-height: 100vh;
   position: relative;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Headings Hierarchy */

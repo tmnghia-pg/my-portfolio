@@ -31,7 +31,9 @@ export function renderHero(container) {
 
             <h1 class="hero-name">${name}</h1>
             <div class="hero-headline">${headline}</div>
-            <p class="hero-summary">${summary}</p>
+            <div class="hero-summary">
+              ${(summary || '').split('\n\n').filter(Boolean).map(p => `<p style="margin-bottom:0.75rem">${p}</p>`).join('')}
+            </div>
 
             <div class="hero-contacts">
               <div class="contact-chip" id="chip-email" title="Click để sao chép Email" role="button" tabindex="0">
@@ -78,44 +80,44 @@ export function renderHero(container) {
             </div>
           </div>
 
-          <!-- Right Column / Highlight Metrics -->
+          <!-- Right Column / Technical Highlights -->
           <div class="hero-sidebar">
             <div class="hero-card">
               <div class="hero-card-header">
-                <span class="hero-card-title">Technical Highlights</span>
-                <span class="badge badge-primary">MISA & Systems</span>
+                <span class="hero-card-title">${LanguageService.getUi('technicalHighlights.title')}</span>
+                <span class="badge badge-primary">${LanguageService.getUi('technicalHighlights.badge')}</span>
               </div>
 
               <div class="metrics-list">
                 <div class="metric-item">
-                  <div class="metric-icon">📊</div>
+                  <div class="metric-icon">🚀</div>
                   <div class="metric-details">
-                    <span class="metric-value">Custom Reporting Engine</span>
-                    <span class="metric-label">${LanguageService.getUi('metrics.reportMetric')}</span>
-                  </div>
-                </div>
-
-                <div class="metric-item">
-                  <div class="metric-icon">👥</div>
-                  <div class="metric-details">
-                    <span class="metric-value">Advisor & Mentorship</span>
-                    <span class="metric-label">${LanguageService.getUi('metrics.advisorMetric')}</span>
+                    <span class="metric-value">${LanguageService.getUi('technicalHighlights.independent.title')}</span>
+                    <span class="metric-label">${LanguageService.getUi('technicalHighlights.independent.desc')}</span>
                   </div>
                 </div>
 
                 <div class="metric-item">
                   <div class="metric-icon">⚡</div>
                   <div class="metric-details">
-                    <span class="metric-value">Clean Architecture & .NET 8</span>
-                    <span class="metric-label">${LanguageService.getUi('metrics.architectureMetric')}</span>
+                    <span class="metric-value">${LanguageService.getUi('technicalHighlights.aiFirst.title')}</span>
+                    <span class="metric-label">${LanguageService.getUi('technicalHighlights.aiFirst.desc')}</span>
                   </div>
                 </div>
 
                 <div class="metric-item">
-                  <div class="metric-icon">🤖</div>
+                  <div class="metric-icon">👥</div>
                   <div class="metric-details">
-                    <span class="metric-value">AI-assisted Engineering</span>
-                    <span class="metric-label">Xây dựng wiki tri thức nghiệp vụ, tùy biến quy trình AI Coding và skills chuyên biệt</span>
+                    <span class="metric-value">${LanguageService.getUi('technicalHighlights.advisor.title')}</span>
+                    <span class="metric-label">${LanguageService.getUi('technicalHighlights.advisor.desc')}</span>
+                  </div>
+                </div>
+
+                <div class="metric-item">
+                  <div class="metric-icon">🤝</div>
+                  <div class="metric-details">
+                    <span class="metric-value">${LanguageService.getUi('technicalHighlights.leadership.title')}</span>
+                    <span class="metric-label">${LanguageService.getUi('technicalHighlights.leadership.desc')}</span>
                   </div>
                 </div>
               </div>

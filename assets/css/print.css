@@ -97,6 +97,30 @@
     color: #0F172A !important;
   }
 
+  .resume-badge-type {
+    display: inline-flex !important;
+    font-size: 7pt !important;
+    font-weight: 600 !important;
+    padding: 0.5pt 3pt !important;
+    border-radius: 2pt !important;
+    margin-left: 3pt !important;
+    vertical-align: middle !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .resume-type-enterprise {
+    background: #EFF6FF !important;
+    color: #1D4ED8 !important;
+    border: 0.5pt solid #BFDBFE !important;
+  }
+
+  .resume-type-personal {
+    background: #F5F3FF !important;
+    color: #6D28D9 !important;
+    border: 0.5pt solid #DDD6FE !important;
+  }
+
   .resume-item-sub {
     font-size: 8.5pt !important;
     font-weight: 600 !important;
@@ -127,6 +151,27 @@
 
   .resume-skill-val {
     color: #475569 !important;
+  }
+
+  .resume-interests-wrap {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 4pt !important;
+    margin-top: 4pt !important;
+  }
+
+  .resume-interest-tag {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 3pt !important;
+    padding: 1.5pt 5pt !important;
+    background-color: #F8FAFC !important;
+    border: 0.5pt solid #CBD5E1 !important;
+    border-radius: 9999px !important;
+    font-size: 7.5pt !important;
+    color: #0F172A !important;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
   }
 
   a {

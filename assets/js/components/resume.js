@@ -11,6 +11,7 @@ export function renderResume(container) {
   const skillsData = dataService.getSkills();
   const education = dataService.getEducation();
   const certificates = dataService.getCertificates();
+  const interests = dataService.getInterests();
   const activeProfile = profileService.getActiveProfile();
   const featuredProjectIds = profileService.getFeaturedProjectIds();
   const skillGroupsOrder = profileService.getSkillGroupsOrder();
@@ -22,10 +23,17 @@ export function renderResume(container) {
   const phone = profile?.contact?.phone || '';
   const email = profile?.contact?.email || '';
 
-  // Filter projects for resume based on featured ids
-  const resumeProjects = allProjects
+  // Filter projects for resume based on featured ids: enterprise first, personal second
+  const resumeProjects = [...allProjects]
     .filter(p => featuredProjectIds.includes(p.id) && p.status !== 'archived')
-    .slice(0, 4);
+    .sort((a, b) => {
+      const catPriority = { 'professional': 0, 'personal': 1 };
+      const priorityA = catPriority[a.category] ?? 1;
+      const priorityB = catPriority[b.category] ?? 1;
+      if (priorityA !== priorityB) return priorityA - priorityB;
+      return featuredProjectIds.indexOf(a.id) - featuredProjectIds.indexOf(b.id);
+    })
+    .slice(0, 5);
 
   // Skill items map
   const itemsMap = new Map((skillsData?.items || []).map(i => [i.id, i.name]));
@@ -61,7 +69,9 @@ export function renderResume(container) {
         <div class="resume-section-title">
           <span>${LanguageService.getUi('sections.summary')}</span>
         </div>
-        <p style="font-size:0.875rem;line-height:1.55;color:#334155">${summary}</p>
+        <div style="font-size:0.875rem;line-height:1.6;color:var(--text-secondary)">
+          ${(summary || '').split('\n\n').filter(Boolean).map(p => `<p style="margin-bottom:0.4rem">${p}</p>`).join('')}
+        </div>
       </section>
 
       <!-- Technical Skills Matrix -->
@@ -124,11 +134,19 @@ export function renderResume(container) {
           const prjDesc = LanguageService.getText(prj.description);
           const techList = (prj.technologies || []).join(', ');
           const highlights = prj.highlights ? LanguageService.getText(prj.highlights) : [];
+          const isEnterprise = prj.category === 'professional';
+          const typeLabel = isEnterprise ? LanguageService.getUi('projectTypes.professional') : LanguageService.getUi('projectTypes.personal');
+          const typeBadgeClass = isEnterprise ? 'resume-type-enterprise' : 'resume-type-personal';
+          const typeIcon = isEnterprise ? '🏢' : '🚀';
 
           return `
             <div class="resume-item">
               <div class="resume-item-header">
-                <span>${prj.name} <span style="font-weight:400;color:#64748b;font-size:0.8rem">(${LanguageService.getText(prj.tagline)})</span></span>
+                <span>
+                  ${prj.name}
+                  <span class="resume-badge-type ${typeBadgeClass}">${typeIcon} ${typeLabel}</span>
+                  <span style="font-weight:400;color:#64748b;font-size:0.8rem">(${LanguageService.getText(prj.tagline)})</span>
+                </span>
                 <span style="font-size:0.75rem;font-family:var(--font-mono)">${prjRole}</span>
               </div>
               <div style="font-size:0.75rem;color:#0284c7;font-family:var(--font-mono);margin-bottom:3px">
@@ -146,7 +164,7 @@ export function renderResume(container) {
       </section>
 
       <!-- Education & Credentials -->
-      <section class="resume-section" style="margin-bottom:0">
+      <section class="resume-section">
         <div class="resume-section-title">
           <span>${LanguageService.getUi('sections.education')}</span>
         </div>
@@ -154,8 +172,8 @@ export function renderResume(container) {
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
           <div>
             ${education.map(edu => `
-              <div style="font-size:0.85rem;font-weight:700;color:#0f172a">${edu.institution}</div>
-              <div style="font-size:0.75rem;color:#0284c7;font-weight:600">
+              <div style="font-size:0.85rem;font-weight:700;color:#0F172A">${edu.institution}</div>
+              <div style="font-size:0.75rem;color:var(--primary);font-weight:600">
                 ${LanguageService.getText(edu.degree)} • ${LanguageService.getText(edu.grade)} (${edu.graduationYear})
               </div>
             `).join('')}
@@ -163,12 +181,27 @@ export function renderResume(container) {
 
           <div>
             ${certificates.map(cert => `
-              <div style="font-size:0.85rem;font-weight:700;color:#0f172a">${LanguageService.getText(cert.name)}</div>
-              <div style="font-size:0.75rem;color:#0284c7;font-weight:600">
+              <div style="font-size:0.85rem;font-weight:700;color:#0F172A">${LanguageService.getText(cert.name)}</div>
+              <div style="font-size:0.75rem;color:var(--primary);font-weight:600">
                 ${cert.issuer} ${cert.year ? `• ${cert.year}` : ''}
               </div>
             `).join('')}
           </div>
+        </div>
+      </section>
+
+      <!-- Interests & Activities (Nhãn sở thích trên CV) -->
+      <section class="resume-section" style="margin-bottom:0">
+        <div class="resume-section-title">
+          <span>${LanguageService.getUi('sections.interests')}</span>
+        </div>
+        <div class="resume-interests-wrap">
+          ${interests.map(item => `
+            <span class="resume-interest-tag">
+              <span class="resume-interest-icon">${item.icon}</span>
+              <span>${LanguageService.getText(item.name)}</span>
+            </span>
+          `).join('')}
         </div>
       </section>
     </article>

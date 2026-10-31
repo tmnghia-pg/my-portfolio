@@ -6,7 +6,7 @@
       "name": "MISA BUMAS",
       "category": "professional",
       "tagline": {
-        "vi": "Phần mềm quản lý ngân sách địa phương",
+        "vi": "Phần mềm Quản lý Ngân sách Nhà nước",
         "en": "Local Government Budget Management Platform"
       },
       "description": {
@@ -49,7 +49,7 @@
       "name": "MISA LEKIMA",
       "category": "professional",
       "tagline": {
-        "vi": "Phần mềm tổng hợp báo cáo quyết toán tài chính",
+        "vi": "Phần mềm Tổng hợp báo cáo Quyết toán Tài chính",
         "en": "Financial Settlement & Reporting Consolidation Platform"
       },
       "description": {
@@ -87,7 +87,7 @@
       "name": "MISA Panda Online",
       "category": "professional",
       "tagline": {
-        "vi": "Phần mềm kế toán nghiệp vụ thi hành án dân sự",
+        "vi": "Phần mềm Kế toán nghiệp vụ Thi hành án dân sự",
         "en": "Specialized Accounting Platform for Civil Judgment Enforcement"
       },
       "description": {
@@ -164,12 +164,12 @@
       "name": "TORVEN",
       "category": "personal",
       "tagline": {
-        "vi": "Website thương mại điện tử sản phẩm chăm sóc cá nhân nam giới",
-        "en": "Men's Grooming & Personal Care E-Commerce Brand Platform"
+        "vi": "E-Commerce & Headless CMS – Thi công triệt để với AI Coding",
+        "en": "E-Commerce & Headless CMS – AI-First Engineering & Integrations"
       },
       "description": {
-        "vi": "Nền tảng thương mại điện tử hiện đại kết hợp hệ thống CMS quản trị nội dung linh hoạt cho thương hiệu sản phẩm cá nhân nam giới.",
-        "en": "Modern direct-to-consumer e-commerce storefront backed by a dynamic headless CMS for men's personal care products."
+        "vi": "Nền tảng thương mại điện tử hiện đại cho thương hiệu chăm sóc cá nhân nam giới, áp dụng triệt để AI Coding xuyên suốt quá trình thi công và tích hợp các module bên thứ ba (Zalo OA, ngân hàng, vận chuyển).",
+        "en": "Modern direct-to-consumer e-commerce brand platform, applying AI-First engineering throughout rapid construction and third-party integrations (Zalo OA, banking, logistics)."
       },
       "role": {
         "vi": "Developer",
@@ -184,14 +184,14 @@
       ],
       "highlights": {
         "vi": [
-          "Xây dựng kiến trúc frontend Next.js chuẩn SEO và tối ưu trải nghiệm mua sắm trên thiết bị di động.",
-          "Phát triển hệ thống CMS toàn diện quản lý sản phẩm, đơn hàng, khách hàng, điểm thưởng và tin tức.",
-          "Phát triển chức năng cấu hình nội dung trang chủ động (banner, media, layout block) và tích hợp Zalo OA cùng cổng thanh toán ngân hàng."
+          "Áp dụng phương pháp AI Coding triệt để vào toàn bộ quá trình thi công từ thiết kế kiến trúc, sinh mã nguồn đến kiểm thử, giúp tối ưu hóa tiến độ và chuẩn hóa chất lượng.",
+          "Tích hợp đồng bộ các module bên thứ ba: liên kết cổng thanh toán ngân hàng trực tuyến, tích hợp Zalo OA chăm sóc khách hàng tự động và kết nối dịch vụ vận chuyển giao hàng.",
+          "Phát triển hệ thống CMS toàn diện quản trị sản phẩm, đơn hàng, khách hàng, điểm thưởng và cơ chế tùy biến khối nội dung trang chủ linh hoạt."
         ],
         "en": [
-          "Architected modern Next.js storefront focused on SEO performance and mobile-first consumer experience.",
-          "Built a comprehensive admin CMS for products, orders, customer profiles, loyalty points, and content articles.",
-          "Developed dynamic homepage layout customizer (banners, blocks, media) and integrated Zalo OA & bank payment gateways."
+          "Thoroughly applied AI Coding throughout the development lifecycle—from architecture to code generation and testing—maximizing velocity and code quality.",
+          "Seamlessly integrated third-party modules: online banking payment gateways, automated customer engagement via Zalo OA, and logistics shipping services.",
+          "Architected a comprehensive admin CMS managing product catalogs, order processing, loyalty programs, and dynamic homepage customizers."
         ]
       },
       "status": "in-progress",

@@ -28,6 +28,7 @@ class DataService {
         skills,
         education,
         certificates,
+        interests,
         profilesConfig,
         themesConfig,
         siteConfig
@@ -38,6 +39,7 @@ class DataService {
         this.fetchJson('./data/skills.json'),
         this.fetchJson('./data/education.json'),
         this.fetchJson('./data/certificates.json'),
+        this.fetchJson('./data/interests.json'),
         this.fetchJson('./data/config/profiles.json'),
         this.fetchJson('./data/config/themes.json'),
         this.fetchJson('./data/config/site.json')
@@ -49,6 +51,7 @@ class DataService {
       this.cache.set('skills', skills);
       this.cache.set('education', education);
       this.cache.set('certificates', certificates);
+      this.cache.set('interests', interests);
       this.cache.set('profilesConfig', profilesConfig);
       this.cache.set('themesConfig', themesConfig);
       this.cache.set('siteConfig', siteConfig);
@@ -95,6 +98,10 @@ class DataService {
 
   getCertificates() {
     return this.cache.get('certificates')?.items || [];
+  }
+
+  getInterests() {
+    return this.cache.get('interests')?.items || [];
   }
 
   getProfilesConfig() {

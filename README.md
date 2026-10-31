@@ -32,6 +32,17 @@ Website CV & Portfolio cá nhân dạng tĩnh (Static Web), định hướng ứ
 
 ---
 
+## 🎯 Chiến lược CV & Trọng tâm định vị
+
+| Vị trí trong CV | Nội dung nên nhấn mạnh |
+| :--- | :--- |
+| **Professional Summary** | Năng lực phát triển sản phẩm, .NET, AI Engineering |
+| **Technical Highlights** | SnapFox, TORVEN, Mentorship, Team Leadership |
+| **MISA Experience** | Custom Reporting Engine, performance, security, Advisor |
+| **Personal Projects** | Chi tiết SnapFox và TORVEN |
+
+---
+
 ## 🚀 Cách chạy tại Local
 
 Do trình duyệt chặn đọc file JSON qua giao thức `file://` (CORS security), cần chạy website qua một local web server:

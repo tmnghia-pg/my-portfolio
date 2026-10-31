@@ -34,20 +34,20 @@ Không nên tự ghi "Senior" trong headline nếu chưa xác minh được ph�
 trách nhiệm tương ứng. Có thể dùng vị trí Senior .NET Developer làm mục
 tiêu ứng tuyển.
 
-## Tóm tắt nghề nghiệp đề xuất
+## Tóm tắt nghề nghiệp đề xuất (Professional Summary)
 
-Lập trình viên phần mềm với kinh nghiệm phát triển các sản phẩm quản lý
-tài chính, ngân sách và nghiệp vụ chuyên ngành tại MISA, cùng các dự án
-web trong lĩnh vực Print-on-Demand và thương mại điện tử. Có kinh nghiệm
-phát triển ứng dụng trên nền tảng .NET 8, ASP.NET Core, MVC, Vue.js và
-Next.js; tham gia xây dựng module nghiệp vụ, công cụ báo cáo tùy chỉnh,
-cải thiện hiệu năng và rà soát an ninh.
+Fullstack Developer với hơn 3 năm kinh nghiệm, định hướng chuyên sâu .NET Backend, sử dụng .NET 8, ASP.NET Core và Vue.js. Có khả năng độc lập phân tích yêu cầu, đề xuất giải pháp kỹ thuật và phát triển sản phẩm phần mềm end-to-end.
 
-Bên cạnh công việc phát triển tính năng, có kinh nghiệm phụ trách các
-hoạt động kỹ thuật ở phạm vi dự án như cải tiến Design System, xây dựng
-quy trình AI Coding và kho tri thức phục vụ phát triển phần mềm. Từng
-đảm nhiệm vai trò Advisor, đào tạo và hỗ trợ 3 nhân sự Fresher trong quá
-trình thử việc và làm việc.
+Chủ động ứng dụng AI Coding trong quy trình phát triển, đồng thời có kinh nghiệm Technical Advisor, đào tạo Fresher và đóng góp vào các hoạt động kỹ thuật, cải tiến sản phẩm.
+
+## Chiến lược CV
+
+| Vị trí trong CV | Nội dung nên nhấn mạnh |
+| :--- | :--- |
+| **Professional Summary** | Năng lực phát triển sản phẩm, .NET, AI Engineering |
+| **Technical Highlights** | SnapFox, TORVEN, Mentorship, Team Leadership |
+| **MISA Experience** | Custom Reporting Engine, performance, security, Advisor |
+| **Personal Projects** | Chi tiết SnapFox và TORVEN |
 
 ## Thông tin cá nhân
 
@@ -76,7 +76,7 @@ trình thử việc và làm việc.
 Tham gia phát triển các sản phẩm phần mềm phục vụ lĩnh vực tài chính
 công và kế toán chuyên ngành:
 
--   **MISA BUMAS:** Phần mềm quản lý ngân sách địa phương.
+-   **MISA BUMAS:** Phần mềm Quản lý Ngân sách Nhà nước MISA Bumas.
 -   **MISA LEKIMA:** Phần mềm tổng hợp báo cáo quyết toán tài chính.
 -   **MISA Panda Online:** Phần mềm kế toán chuyên dụng cho các đơn vị
     thi hành án.
@@ -351,6 +351,7 @@ data/
 ├── skills.json
 ├── education.json
 ├── certificates.json
+├── interests.json
 └── config/
     ├── profiles.json
     ├── themes.json
@@ -460,7 +461,7 @@ data/
       "name": "MISA BUMAS",
       "category": "professional",
       "description": {
-        "vi": "Phần mềm quản lý ngân sách địa phương.",
+        "vi": "Phần mềm Quản lý Ngân sách Nhà nước",
         "en": "Local government budget management software."
       },
       "role": {

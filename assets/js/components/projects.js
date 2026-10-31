@@ -8,8 +8,13 @@ export function renderProjects(container) {
   const allProjects = dataService.getProjects();
   const featuredIds = profileService.getFeaturedProjectIds();
 
-  // Sort featured projects to the top according to profile config
+  // Sort enterprise/company projects first, personal projects second; then by profile featured order
   const sortedProjects = [...allProjects].sort((a, b) => {
+    const catPriority = { 'professional': 0, 'personal': 1 };
+    const priorityA = catPriority[a.category] ?? 1;
+    const priorityB = catPriority[b.category] ?? 1;
+    if (priorityA !== priorityB) return priorityA - priorityB;
+
     const aIndex = featuredIds.indexOf(a.id);
     const bIndex = featuredIds.indexOf(b.id);
     if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
@@ -42,6 +47,11 @@ export function renderProjects(container) {
             const role = LanguageService.getText(prj.role);
             const highlights = prj.highlights ? LanguageService.getText(prj.highlights) : [];
             const isFeatured = featuredIds.includes(prj.id);
+            const isEnterprise = prj.category === 'professional';
+            const categoryBadgeLabel = isEnterprise
+              ? '🏢 ' + LanguageService.getUi('projectTypes.professional')
+              : '🚀 ' + LanguageService.getUi('projectTypes.personal');
+            const categoryBadgeClass = isEnterprise ? 'badge-enterprise' : 'badge-personal';
             
             const statusLabel = LanguageService.getUi(`status.${prj.status === 'in-progress' ? 'inProgress' : prj.status}`);
             const statusClass = prj.status === 'active' ? 'badge-success' : (prj.status === 'in-progress' ? 'badge-warning' : '');
@@ -49,8 +59,11 @@ export function renderProjects(container) {
             return `
               <div class="card project-card ${isFeatured ? 'project-featured' : ''}">
                 <div class="project-header">
-                  <div>
-                    <h3 class="project-name">${name}</h3>
+                  <div style="flex:1">
+                    <div style="display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-1);flex-wrap:wrap">
+                      <h3 class="project-name" style="margin-bottom:0">${name}</h3>
+                      <span class="badge ${categoryBadgeClass}">${categoryBadgeLabel}</span>
+                    </div>
                     <div class="project-tagline">${tagline}</div>
                   </div>
                   <span class="badge ${statusClass}">${statusLabel}</span>

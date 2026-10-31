@@ -6,6 +6,7 @@ import { LanguageService } from '../language-service.js';
 export function renderEducation(container) {
   const education = dataService.getEducation();
   const certificates = dataService.getCertificates();
+  const interests = dataService.getInterests();
 
   container.innerHTML = `
     <section id="education" class="section" aria-label="Học vấn và chứng chỉ">
@@ -16,7 +17,7 @@ export function renderEducation(container) {
               <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
               <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
             </svg>
-            <span>Credentials</span>
+            <span>Credentials & Culture</span>
           </div>
           <h2 class="section-title">${LanguageService.getUi('sections.education')}</h2>
           <p class="section-subtitle">${LanguageService.getUi('sections.educationSub')}</p>
@@ -70,6 +71,40 @@ export function renderEducation(container) {
                       ${cert.issuer}
                     </div>
                     <p style="font-size:var(--text-xs);color:var(--text-secondary);line-height:1.6">${description}</p>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        </div>
+
+        <!-- Interests & Activities (Nhãn sở thích & Hoạt động) -->
+        <div class="interests-container" style="margin-top:var(--space-8)">
+          <div class="card" style="padding:var(--space-6)">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4)">
+              <div>
+                <h3 style="font-size:var(--text-lg);font-weight:700;color:var(--text-primary);display:flex;align-items:center;gap:var(--space-2)">
+                  <span>🎯</span>
+                  <span>${LanguageService.getUi('sections.interests')}</span>
+                </h3>
+                <p style="font-size:var(--text-xs);color:var(--text-secondary);margin-top:2px">
+                  ${LanguageService.getUi('sections.interestsSub')}
+                </p>
+              </div>
+              <span class="badge badge-primary">Work-Life Balance & Team Engagement</span>
+            </div>
+
+            <div class="interest-chips-grid">
+              ${interests.map(item => {
+                const itemName = LanguageService.getText(item.name);
+                const itemDesc = LanguageService.getText(item.description);
+                return `
+                  <div class="interest-chip" title="${itemDesc}">
+                    <span class="interest-chip-icon">${item.icon}</span>
+                    <div class="interest-chip-body">
+                      <span class="interest-chip-name">${itemName}</span>
+                      <span class="interest-chip-desc">${itemDesc}</span>
+                    </div>
                   </div>
                 `;
               }).join('')}

@@ -13,8 +13,8 @@
         "en": ".NET Developer | Backend & Technical Architecture"
       },
       "summary": {
-        "vi": "Lập trình viên chuyên sâu nền tảng .NET 8, ASP.NET Core và Clean Architecture với kinh nghiệm xây dựng các module nghiệp vụ phức tạp, công cụ báo cáo tùy chỉnh độc lập, xử lý tối ưu hiệu năng và an ninh hệ thống tại MISA. Có kinh nghiệm tổ chức quy trình AI Coding và đào tạo nhân sự Fresher.",
-        "en": "Specialized .NET engineer focusing on .NET 8, ASP.NET Core, and Clean Architecture with proven achievements delivering mission-critical business modules, standalone dynamic reporting engines, performance tuning, and security audits at MISA. Experienced in establishing AI-assisted workflows and mentoring fresher engineers."
+        "vi": "Fullstack Developer với hơn 3 năm kinh nghiệm, định hướng chuyên sâu .NET Backend, sử dụng .NET 8, ASP.NET Core và Vue.js. Có khả năng độc lập phân tích yêu cầu, đề xuất giải pháp kỹ thuật và phát triển sản phẩm phần mềm end-to-end.\n\nChủ động ứng dụng AI Coding trong quy trình phát triển phần mềm. Có kinh nghiệm Technical Advisor, đào tạo và hỗ trợ Fresher, đồng thời tích cực đóng góp vào các hoạt động kỹ thuật và cải tiến sản phẩm.",
+        "en": "Fullstack Developer with 3+ years of experience, specializing in .NET Backend development using .NET 8, ASP.NET Core, and Vue.js. Capable of independently analyzing requirements, proposing technical solutions, and delivering end-to-end software products.\n\nProactively integrates AI Coding into the software development lifecycle. Experienced in technical advisory, mentoring Fresher developers, and contributing to engineering initiatives and product improvements."
       },
       "visibleSections": [
         "summary",
@@ -28,6 +28,7 @@
         "misa-bumas",
         "misa-lekima",
         "misa-panda-online",
+        "torven",
         "snapfox"
       ],
       "skillGroupsOrder": [
@@ -64,9 +65,10 @@
       ],
       "featuredProjectIds": [
         "misa-bumas",
-        "snapfox",
+        "misa-lekima",
+        "misa-panda-online",
         "torven",
-        "misa-lekima"
+        "snapfox"
       ],
       "skillGroupsOrder": [
         "backend",

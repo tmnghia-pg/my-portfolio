@@ -8,12 +8,16 @@ export function renderNavbar(container) {
   const profile = dataService.getProfile();
   const name = LanguageService.getText(profile?.name);
   const initials = name ? name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase() : 'MN';
+  const avatarUrl = profile?.avatar || 'assets/images/avatar.png';
 
   container.innerHTML = `
     <header class="site-header" role="banner">
       <div class="container">
         <a href="#hero" class="nav-brand" aria-label="Trang chủ">
-          <div class="brand-avatar">${initials}</div>
+          <div class="brand-avatar">
+            <img src="${avatarUrl}" alt="${name}" class="brand-avatar-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <span class="brand-avatar-fallback" style="display:none">${initials}</span>
+          </div>
           <div class="brand-text">
             <span class="brand-name">${name}</span>
             <span class="brand-role">Senior .NET</span>

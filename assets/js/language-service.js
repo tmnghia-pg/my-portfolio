@@ -19,6 +19,10 @@ const UI_DICTIONARY = {
       archived: 'Đã lưu trữ',
       featured: 'Tiêu biểu'
     },
+    projectTypes: {
+      professional: 'Doanh nghiệp (MISA)',
+      personal: 'Dự án cá nhân'
+    },
     sections: {
       summary: 'Tóm tắt nghề nghiệp',
       experience: 'Kinh nghiệm làm việc',
@@ -28,7 +32,9 @@ const UI_DICTIONARY = {
       skills: 'Kỹ năng chuyên môn',
       skillsSub: 'Nền tảng công nghệ, kiến trúc và công cụ hỗ trợ công việc',
       education: 'Học vấn & Chứng chỉ',
-      educationSub: 'Bằng cấp kỹ sư chính quy và các chương trình đào tạo'
+      educationSub: 'Bằng cấp kỹ sư chính quy và các chương trình đào tạo',
+      interests: 'Sở thích & Hoạt động phong trào',
+      interestsSub: 'Thể thao, âm nhạc, tinh thần tự học công nghệ và hoạt động phong trào đội nhóm'
     },
     actions: {
       viewResume: 'Chế độ CV A4',
@@ -44,6 +50,26 @@ const UI_DICTIONARY = {
       reportMetric: 'Đáp ứng ~90% mẫu báo cáo thực tế qua module tùy chỉnh',
       advisorMetric: 'Đào tạo và hỗ trợ 3 nhân sự Fresher vượt qua thử việc',
       architectureMetric: 'Thiết kế theo Clean Architecture & .NET 8 chuẩn mực'
+    },
+    technicalHighlights: {
+      title: 'Highlights & Leadership',
+      badge: 'Core Competencies',
+      independent: {
+        title: 'Independent Product Development',
+        desc: 'Độc lập nghiên cứu, thiết kế và phát triển SnapFox Print LLC từ đầu đến khi vận hành thực tế. Xây dựng storefront bán hàng kết hợp hệ thống SnapFoxFactory điều phối xưởng in khép kín.'
+      },
+      aiFirst: {
+        title: 'AI-First Software Engineering',
+        desc: 'Ứng dụng AI Coding xuyên suốt quá trình phát triển TORVEN nhằm tối ưu tiến độ và chất lượng mã nguồn. Triển khai hoàn chỉnh CMS quản trị, tích hợp Zalo OA, cổng thanh toán và vận chuyển.'
+      },
+      advisor: {
+        title: 'Technical Advisor & Mentorship',
+        desc: 'Đảm nhận vai trò Technical Advisor (hoàn thành chương trình Cán bộ nguồn MISA). Trực tiếp đào tạo, giải đáp kỹ thuật và đồng hành giúp 3 Fresher vượt qua thử việc, tự tin đảm nhận dự án.'
+      },
+      leadership: {
+        title: 'Team Leadership & Organization',
+        desc: 'Từng đảm nhiệm vai trò thủ quỹ và trưởng ban phong trào, chủ động tổ chức các hoạt động và giải đấu thể thao nội bộ. Khéo léo kết nối các thành viên, xây dựng tinh thần đồng đội tích cực và gắn kết.'
+      }
     },
     footer: {
       role: 'Kỹ sư phần mềm .NET & Giải pháp kỹ thuật',
@@ -67,6 +93,10 @@ const UI_DICTIONARY = {
       archived: 'Archived',
       featured: 'Featured'
     },
+    projectTypes: {
+      professional: 'Enterprise (MISA)',
+      personal: 'Personal Project'
+    },
     sections: {
       summary: 'Professional Summary',
       experience: 'Work Experience',
@@ -76,7 +106,9 @@ const UI_DICTIONARY = {
       skills: 'Technical Skills',
       skillsSub: 'Technology stack, software architecture, and development tooling',
       education: 'Education & Certifications',
-      educationSub: 'Formal engineering degree and leadership development programs'
+      educationSub: 'Formal engineering degree and leadership development programs',
+      interests: 'Interests & Activities',
+      interestsSub: 'Sports, music, self-driven continuous learning, and team bonding'
     },
     actions: {
       viewResume: 'Resume A4 View',
@@ -92,6 +124,26 @@ const UI_DICTIONARY = {
       reportMetric: 'Fulfills ~90% of dynamic report formats via custom engine',
       advisorMetric: 'Mentored & guided 3 Fresher engineers through onboarding',
       architectureMetric: 'Robust Clean Architecture & .NET 8 implementation'
+    },
+    technicalHighlights: {
+      title: 'Highlights & Leadership',
+      badge: 'Core Competencies',
+      independent: {
+        title: 'Independent Product Development',
+        desc: 'Independently architected and built SnapFox Print LLC from ground up to live production. Delivered an e-commerce storefront alongside SnapFoxFactory to orchestrate automated factory fulfillment.'
+      },
+      aiFirst: {
+        title: 'AI-First Software Engineering',
+        desc: 'Applied AI Coding across the TORVEN lifecycle to maximize delivery speed and code quality. Shipped a dynamic headless CMS integrated with Zalo OA, banking payments, and logistics services.'
+      },
+      advisor: {
+        title: 'Technical Advisor & Mentorship',
+        desc: 'Served as Technical Advisor (completed MISA Future Leader program). Coached and unblocked 3 Fresher developers through probation to become confident project contributors.'
+      },
+      leadership: {
+        title: 'Team Leadership & Organization',
+        desc: 'Served as team treasurer and movement lead, organizing athletic tournaments and team-building events. Strengthened workplace camaraderie and cultivated an active, collaborative team spirit.'
+      }
     },
     footer: {
       role: '.NET Software Engineer & Technical Solutions',
