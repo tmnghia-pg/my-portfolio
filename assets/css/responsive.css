@@ -1,0 +1,107 @@
+/* Responsive Adaptations */
+
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .edu-cert-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 3.75rem;
+  }
+
+  .site-header .nav-links {
+    display: none; /* Can be accessed via floating or mobile scroll */
+  }
+
+  .section {
+    padding-top: var(--space-10);
+    padding-bottom: var(--space-10);
+  }
+
+  .hero-name {
+    font-size: 2.25rem;
+  }
+
+  .projects-grid,
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline::before {
+    left: 12px;
+  }
+
+  .timeline-item {
+    padding-left: 38px;
+  }
+
+  .timeline-marker {
+    left: 4px;
+  }
+
+  .resume-view-container {
+    padding: var(--space-5);
+    margin: var(--space-4);
+  }
+
+  .resume-header {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .resume-contacts-grid {
+    align-items: flex-start;
+  }
+
+  .resume-skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-bar {
+    width: calc(100% - var(--space-6));
+    max-width: 440px;
+    justify-content: space-between;
+    padding: var(--space-2);
+  }
+
+  .floating-bar .btn-pill {
+    padding: var(--space-1) var(--space-2);
+    font-size: 0.7rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-contacts {
+    flex-direction: column;
+  }
+
+  .contact-chip {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .floating-bar .toolbar-text-label {
+    display: none;
+  }
+}

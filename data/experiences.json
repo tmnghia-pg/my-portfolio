@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "misa-2023-present",
+      "company": "Công ty Cổ phần MISA",
+      "position": {
+        "vi": "Software Engineer / Advisor",
+        "en": "Software Engineer / Advisor"
+      },
+      "startDate": "2023-07",
+      "endDate": null,
+      "isCurrent": true,
+      "summary": {
+        "vi": "Tham gia phát triển và tối ưu các sản phẩm phần mềm phục vụ lĩnh vực tài chính công, ngân sách địa phương và kế toán chuyên ngành (MISA BUMAS, MISA LEKIMA, MISA Panda Online).",
+        "en": "Developing and optimizing core enterprise software products for public finance, local budget management, and specialized accounting (MISA BUMAS, MISA LEKIMA, MISA Panda Online)."
+      },
+      "highlights": [
+        {
+          "vi": "Độc lập nghiên cứu và triển khai công cụ báo cáo tùy chỉnh sử dụng GrapeCity Documents for Excel, chuẩn hóa cấu hình người dùng sang template JSON và sinh báo cáo động phức tạp, đáp ứng khoảng 90% mẫu báo cáo thực tế.",
+          "en": "Independently designed and implemented a standalone custom reporting engine using GrapeCity Documents for Excel, normalizing user configurations into JSON templates for dynamic complex reports, fulfilling ~90% of production report formats."
+        },
+        {
+          "vi": "Chủ động phân tích yêu cầu từ BA, triển khai các module nghiệp vụ phức tạp, tham gia theo dõi và xử lý điểm nghẽn hiệu năng hệ thống, rà soát an ninh và cải tiến Design System.",
+          "en": "Proactively collaborated with BAs to architect and deliver complex business modules, monitored and resolved system performance bottlenecks, conducted security audits, and enhanced enterprise Design Systems."
+        },
+        {
+          "vi": "Phụ trách tùy biến và chuẩn hóa quy trình AI Coding theo ngữ cảnh dự án; xây dựng, duy trì kho tri thức (wiki) và các skill chuyên biệt phục vụ phân tích, triển khai và kiểm thử phần mềm.",
+          "en": "Spearheaded tailored AI-assisted coding workflows for project contexts; established and maintained domain/technical knowledge wikis and specialized skills to streamline analysis, implementation, and automated testing."
+        },
+        {
+          "vi": "Với vai trò Advisor và hoàn thành chương trình 'MISA – Cán bộ nguồn', trực tiếp đào tạo, hướng dẫn và đồng hành cùng 3 nhân sự Fresher vượt qua giai đoạn thử việc và tham gia dự án.",
+          "en": "Served as Technical Advisor (completed MISA Management Development Program), mentoring and coaching 3 Fresher developers through probation into confident project contributors."
+        }
+      ],
+      "projectIds": [
+        "misa-bumas",
+        "misa-lekima",
+        "misa-panda-online"
+      ],
+      "skillIds": [
+        "csharp",
+        "dotnet-8",
+        "aspnet-core",
+        "vue-3",
+        "clean-architecture",
+        "kafka",
+        "playwright",
+        "grapecity-excel"
+      ]
+    }
+  ]
+}

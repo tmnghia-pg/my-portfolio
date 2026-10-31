@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "misa-bumas",
+      "name": "MISA BUMAS",
+      "category": "professional",
+      "tagline": {
+        "vi": "Phần mềm quản lý ngân sách địa phương",
+        "en": "Local Government Budget Management Platform"
+      },
+      "description": {
+        "vi": "Hệ thống quản lý ngân sách nhà nước cấp địa phương, phục vụ lập dự toán, chấp hành và tổng hợp số liệu ngân sách với khối lượng dữ liệu lớn và yêu cầu nghiệp vụ nghiêm ngặt.",
+        "en": "State budget management software for local administrative divisions, supporting budget estimation, execution, and financial consolidation with high volume data and strict fiscal standards."
+      },
+      "role": {
+        "vi": "Software Engineer",
+        "en": "Software Engineer"
+      },
+      "period": "2023 - Hiện tại",
+      "technologies": [
+        "dotnet-8",
+        "vue-3",
+        "clean-architecture",
+        "grapecity-excel",
+        "sql-server"
+      ],
+      "highlights": {
+        "vi": [
+          "Phát triển các module cốt lõi: lập dự toán ngân sách, quản lý danh mục và quản lý thuyết minh Excel đồng bộ.",
+          "Độc lập nghiên cứu và xây dựng công cụ báo cáo tùy chỉnh: giải quyết bài toán người dùng tự cấu hình báo cáo phân cấp, dòng/cột động và trộn dữ liệu đa nguồn; chuẩn hóa dữ liệu sang JSON rồi đưa vào template sinh báo cáo, đáp ứng ~90% mẫu báo cáo thực tế.",
+          "Tham gia nghiên cứu và phát triển AI Agent tự động phân tích cấu trúc file Excel mẫu của khách hàng để sinh mẫu thuyết minh tương thích trên hệ thống."
+        ],
+        "en": [
+          "Engineered core modules: budget estimation, catalog management, and Excel financial note synchronization.",
+          "Independently designed and built a standalone custom reporting engine: allowed dynamic hierarchical structures, dynamic row/column mapping, and multi-source data merging; standardized input into clean JSON for template rendering, fulfilling ~90% of real-world reporting cases.",
+          "Contributed to building an AI Agent that parses real customer Excel report samples and automatically generates system-compatible explanation templates."
+        ]
+      },
+      "metrics": {
+        "vi": "Đáp ứng ~90% mẫu báo cáo thực tế",
+        "en": "Satisfies ~90% of complex report formats"
+      },
+      "status": "active",
+      "featured": true
+    },
+    {
+      "id": "misa-lekima",
+      "name": "MISA LEKIMA",
+      "category": "professional",
+      "tagline": {
+        "vi": "Phần mềm tổng hợp báo cáo quyết toán tài chính",
+        "en": "Financial Settlement & Reporting Consolidation Platform"
+      },
+      "description": {
+        "vi": "Giải pháp tổng hợp và đối soát báo cáo quyết toán tài chính, kết nối số liệu từ nhiều đơn vị trực thuộc và cấp trên.",
+        "en": "Centralized reporting platform consolidating and auditing fiscal balance sheets and financial statements across multi-tiered public entities."
+      },
+      "role": {
+        "vi": "Software Engineer / Advisor",
+        "en": "Software Engineer / Advisor"
+      },
+      "period": "2023 - Hiện tại",
+      "technologies": [
+        "dotnet-8",
+        "aspnet-core-mvc",
+        "javascript",
+        "clean-architecture"
+      ],
+      "highlights": {
+        "vi": [
+          "Phát triển và cải tiến các chức năng nghiệp vụ xử lý dữ liệu quyết toán và đối chiếu tự động.",
+          "Tham gia theo dõi, phân tích và tối ưu hiệu năng các luồng xử lý báo cáo lớn.",
+          "Tham gia rà soát an ninh bảo mật và chuẩn hóa cải tiến Design System dùng chung của dự án."
+        ],
+        "en": [
+          "Developed and enhanced core financial settlement auditing and automated reconciliation features.",
+          "Monitored, analyzed, and optimized application performance bottlenecks on heavy reporting endpoints.",
+          "Conducted application security reviews and spearheaded improvements to the shared enterprise Design System."
+        ]
+      },
+      "status": "active",
+      "featured": true
+    },
+    {
+      "id": "misa-panda-online",
+      "name": "MISA Panda Online",
+      "category": "professional",
+      "tagline": {
+        "vi": "Phần mềm kế toán nghiệp vụ thi hành án dân sự",
+        "en": "Specialized Accounting Platform for Civil Judgment Enforcement"
+      },
+      "description": {
+        "vi": "Hệ thống kế toán nghiệp vụ đặc thù phục vụ công tác thu nộp, thanh toán, quản lý tiền gửi và tang vật của các cơ quan thi hành án.",
+        "en": "Domain-specific accounting application managing legal disbursements, revenue collections, escrow funds, and seized property for judgment enforcement agencies."
+      },
+      "role": {
+        "vi": "Software Engineer / Advisor",
+        "en": "Software Engineer / Advisor"
+      },
+      "period": "2023 - Hiện tại",
+      "technologies": [
+        "dotnet-8",
+        "aspnet-core-mvc",
+        "javascript",
+        "sql-server"
+      ],
+      "highlights": {
+        "vi": [
+          "Phát triển module đối chiếu giao dịch nội bộ giúp phát hiện sai lệch và đảm bảo tính toàn vẹn dữ liệu kế toán.",
+          "Theo dõi hiệu năng hệ thống, tham gia kiểm soát an ninh ứng dụng.",
+          "Ứng dụng AI Coding vào dự án: xây dựng bộ wiki tri thức nghiệp vụ và kỹ thuật, tạo các skill hỗ trợ quy trình code & test."
+        ],
+        "en": [
+          "Developed an internal transaction reconciliation module ensuring data consistency and catching ledger discrepancies.",
+          "Monitored operational performance and reinforced security hardening.",
+          "Structured project AI Coding initiatives: curated domain/technical wikis and built purpose-specific automation skills for development and testing."
+        ]
+      },
+      "status": "active",
+      "featured": true
+    },
+    {
+      "id": "snapfox",
+      "name": "SnapFox Print LLC",
+      "category": "personal",
+      "tagline": {
+        "vi": "Hệ thống Print-on-Demand và vận hành xưởng Fulfillment",
+        "en": "Print-on-Demand E-Commerce & Factory Fulfillment Platform"
+      },
+      "description": {
+        "vi": "Giải pháp quản lý toàn diện gồm 2 phân hệ: SnapFox (website khách hàng đặt hàng, thanh toán) và SnapFoxFactory (phần mềm vận hành nội bộ xưởng xử lý sản xuất và giao hàng).",
+        "en": "Full-cycle POD solution consisting of SnapFox (customer storefront, ordering, payment) and SnapFoxFactory (internal factory workflow and production fulfillment)."
+      },
+      "role": {
+        "vi": "Developer",
+        "en": "Developer"
+      },
+      "period": "2023 - 2024",
+      "technologies": [
+        "aspnet-core-mvc",
+        "javascript",
+        "html",
+        "css",
+        "sql-server"
+      ],
+      "highlights": {
+        "vi": [
+          "Xây dựng luồng xử lý đơn hàng khép kín: Order → Design Processing → Mockup → Pack & Ship → Delivery.",
+          "Phát triển các module quản lý file thiết kế, xử lý tùy biến theo yêu cầu của khách hàng.",
+          "Xây dựng hệ thống theo dõi hiệu suất làm việc của công nhân/nhân viên và quản lý kho vật tư."
+        ],
+        "en": [
+          "Implemented the complete order fulfillment pipeline: Order → Design Processing → Mockup → Pack & Ship → Delivery.",
+          "Engineered design asset management and custom print specification engines.",
+          "Built internal staff performance tracking, material inventory control, and authentication subsystems."
+        ]
+      },
+      "status": "active",
+      "featured": true
+    },
+    {
+      "id": "torven",
+      "name": "TORVEN",
+      "category": "personal",
+      "tagline": {
+        "vi": "Website thương mại điện tử sản phẩm chăm sóc cá nhân nam giới",
+        "en": "Men's Grooming & Personal Care E-Commerce Brand Platform"
+      },
+      "description": {
+        "vi": "Nền tảng thương mại điện tử hiện đại kết hợp hệ thống CMS quản trị nội dung linh hoạt cho thương hiệu sản phẩm cá nhân nam giới.",
+        "en": "Modern direct-to-consumer e-commerce storefront backed by a dynamic headless CMS for men's personal care products."
+      },
+      "role": {
+        "vi": "Developer",
+        "en": "Developer"
+      },
+      "period": "2024",
+      "technologies": [
+        "nextjs",
+        "postgresql",
+        "javascript",
+        "css"
+      ],
+      "highlights": {
+        "vi": [
+          "Xây dựng kiến trúc frontend Next.js chuẩn SEO và tối ưu trải nghiệm mua sắm trên thiết bị di động.",
+          "Phát triển hệ thống CMS toàn diện quản lý sản phẩm, đơn hàng, khách hàng, điểm thưởng và tin tức.",
+          "Phát triển chức năng cấu hình nội dung trang chủ động (banner, media, layout block) và tích hợp Zalo OA cùng cổng thanh toán ngân hàng."
+        ],
+        "en": [
+          "Architected modern Next.js storefront focused on SEO performance and mobile-first consumer experience.",
+          "Built a comprehensive admin CMS for products, orders, customer profiles, loyalty points, and content articles.",
+          "Developed dynamic homepage layout customizer (banners, blocks, media) and integrated Zalo OA & bank payment gateways."
+        ]
+      },
+      "status": "in-progress",
+      "featured": true
+    },
+    {
+      "id": "house-drawing-marketplace",
+      "name": "Siêu thị bản vẽ nhà",
+      "category": "personal",
+      "tagline": {
+        "vi": "Website quản lý và giới thiệu bản vẽ kiến trúc nhà",
+        "en": "Architectural House Plans & Blueprint Marketplace"
+      },
+      "description": {
+        "vi": "Hệ thống quản lý, phân loại và giới thiệu các bản vẽ thiết kế kiến trúc và công trình xây dựng dân dụng.",
+        "en": "Web platform cataloging and showcasing residential architectural drawings and construction blueprints."
+      },
+      "role": {
+        "vi": "Developer",
+        "en": "Developer"
+      },
+      "period": "2022 - 2023",
+      "technologies": [
+        "aspnet-core-mvc",
+        "javascript",
+        "html",
+        "css"
+      ],
+      "highlights": {
+        "vi": [
+          "Phát triển chức năng phân loại danh mục bản vẽ, tin tức chuyên ngành, liên hệ tư vấn và xác thực tài khoản."
+        ],
+        "en": [
+          "Developed blueprint catalog navigation, architectural news feeds, consultation inquiry forms, and auth system."
+        ]
+      },
+      "status": "archived",
+      "featured": false
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "groups": [
+    {
+      "id": "backend",
+      "name": {
+        "vi": "Backend & Core",
+        "en": "Backend & Core"
+      },
+      "items": [
+        "csharp",
+        "dotnet-8",
+        "aspnet-core",
+        "aspnet-core-mvc",
+        "rest-api",
+        "nextjs"
+      ]
+    },
+    {
+      "id": "architecture",
+      "name": {
+        "vi": "Kiến trúc & Xử lý nền",
+        "en": "Architecture & Background Workers"
+      },
+      "items": [
+        "clean-architecture",
+        "kafka",
+        "background-workers"
+      ]
+    },
+    {
+      "id": "database",
+      "name": {
+        "vi": "Cơ sở dữ liệu",
+        "en": "Databases"
+      },
+      "items": [
+        "sql-server",
+        "mysql",
+        "postgresql"
+      ]
+    },
+    {
+      "id": "frontend",
+      "name": {
+        "vi": "Frontend",
+        "en": "Frontend"
+      },
+      "items": [
+        "vue",
+        "vue-3",
+        "javascript",
+        "html",
+        "css",
+        "nextjs"
+      ]
+    },
+    {
+      "id": "quality",
+      "name": {
+        "vi": "Kiểm thử & Chất lượng",
+        "en": "Testing & QA"
+      },
+      "items": [
+        "unit-testing",
+        "integration-testing",
+        "playwright"
+      ]
+    },
+    {
+      "id": "tools",
+      "name": {
+        "vi": "Công cụ & AI Engineering",
+        "en": "Dev Tools & AI Engineering"
+      },
+      "items": [
+        "git",
+        "tfs",
+        "jira",
+        "claude-code",
+        "google-antigravity",
+        "cline",
+        "cursor",
+        "github-copilot",
+        "grapecity-excel"
+      ]
+    }
+  ],
+  "items": [
+    {"id": "csharp", "name": "C#", "badge": "Core"},
+    {"id": "dotnet-8", "name": ".NET 8", "badge": "Core"},
+    {"id": "aspnet-core", "name": "ASP.NET Core", "badge": "Core"},
+    {"id": "aspnet-core-mvc", "name": "ASP.NET Core MVC"},
+    {"id": "rest-api", "name": "RESTful API"},
+    {"id": "nextjs", "name": "Next.js"},
+    {"id": "vue", "name": "Vue.js"},
+    {"id": "vue-3", "name": "Vue 3"},
+    {"id": "javascript", "name": "JavaScript (ES6+)"},
+    {"id": "html", "name": "HTML5"},
+    {"id": "css", "name": "CSS3 / Modern Styling"},
+    {"id": "sql-server", "name": "Microsoft SQL Server"},
+    {"id": "mysql", "name": "MySQL"},
+    {"id": "postgresql", "name": "PostgreSQL"},
+    {"id": "clean-architecture", "name": "Clean Architecture"},
+    {"id": "kafka", "name": "Apache Kafka"},
+    {"id": "background-workers", "name": "Background Workers / Queues"},
+    {"id": "unit-testing", "name": "Unit Testing"},
+    {"id": "integration-testing", "name": "Integration Testing"},
+    {"id": "playwright", "name": "Playwright E2E"},
+    {"id": "git", "name": "Git"},
+    {"id": "tfs", "name": "Azure DevOps / TFS"},
+    {"id": "jira", "name": "Jira"},
+    {"id": "claude-code", "name": "Claude Code"},
+    {"id": "google-antigravity", "name": "Google Antigravity"},
+    {"id": "cline", "name": "Cline"},
+    {"id": "cursor", "name": "Cursor"},
+    {"id": "github-copilot", "name": "GitHub Copilot"},
+    {"id": "grapecity-excel", "name": "GrapeCity Documents for Excel"}
+  ]
+}

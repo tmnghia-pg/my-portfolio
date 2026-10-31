@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "tran-minh-nghia",
+  "name": {
+    "vi": "Trần Minh Nghĩa",
+    "en": "Tran Minh Nghia"
+  },
+  "location": {
+    "vi": "Hà Nội, Việt Nam",
+    "en": "Hanoi, Vietnam"
+  },
+  "contact": {
+    "phone": "0825555732",
+    "email": "mntran.pe@gmail.com",
+    "linkedin": null,
+    "github": null,
+    "website": null
+  },
+  "headline": {
+    "vi": "Lập trình viên .NET | Backend & Full-stack | Phụ trách giải pháp kỹ thuật | AI-assisted Engineering",
+    "en": ".NET Developer | Backend & Full-stack | Technical Ownership | AI-assisted Engineering"
+  },
+  "summary": {
+    "vi": "Lập trình viên phần mềm với kinh nghiệm phát triển các sản phẩm quản lý tài chính, ngân sách và nghiệp vụ chuyên ngành tại MISA, cùng các dự án web trong lĩnh vực Print-on-Demand và thương mại điện tử. Có kinh nghiệm phát triển ứng dụng trên nền tảng .NET 8, ASP.NET Core, MVC, Vue.js và Next.js; tham gia xây dựng module nghiệp vụ, công cụ báo cáo tùy chỉnh, cải thiện hiệu năng và rà soát an ninh. Từng phụ trách cải tiến Design System, xây dựng quy trình AI Coding và kho tri thức dự án. Đảm nhiệm vai trò Advisor đào tạo và đồng hành cùng các nhân sự Fresher.",
+    "en": "Software developer with solid experience building financial management, public budgeting, and specialized domain applications at MISA, alongside web systems in Print-on-Demand and e-commerce. Experienced in .NET 8, ASP.NET Core, MVC, Vue.js, and Next.js; building core business modules, standalone custom reporting engines, performance tuning, and security reviews. Proven track record in Design System enhancements, structuring AI-assisted coding workflows, and serving as Technical Advisor mentoring junior engineers."
+  }
+}

@@ -1,0 +1,136 @@
+/* Print CSS for Clean A4 PDF Export (Design System Compliant) */
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm;
+  }
+
+  html, body {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    color: #0F172A !important;
+    font-family: 'Be Vietnam Pro', 'Inter', sans-serif !important;
+    font-size: 10pt !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide interactive chrome and web-only sections */
+  .site-header,
+  .floating-bar,
+  .portfolio-view-container,
+  .site-footer,
+  .toast-container,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Always show resume view with clean white background when printing */
+  .resume-view-container {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    color: #0F172A !important;
+  }
+
+  .resume-header {
+    border-bottom: 2pt solid #0F172A !important;
+    padding-bottom: 8pt !important;
+    margin-bottom: 10pt !important;
+  }
+
+  .resume-title-block h1 {
+    font-size: 20pt !important;
+    font-weight: 700 !important;
+    color: #0F172A !important;
+    line-height: 1.2 !important;
+  }
+
+  .resume-headline {
+    font-size: 11pt !important;
+    font-weight: 600 !important;
+    color: #2563EB !important;
+  }
+
+  .resume-contacts-grid {
+    font-size: 8.5pt !important;
+    color: #475569 !important;
+  }
+
+  .resume-section {
+    margin-bottom: 10pt !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .resume-section-title {
+    font-size: 11pt !important;
+    font-weight: 700 !important;
+    color: #0F172A !important;
+    border-bottom: 1pt solid #E2E8F0 !important;
+    margin-bottom: 6pt !important;
+    padding-bottom: 2pt !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+  }
+
+  .resume-item {
+    margin-bottom: 6pt !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .resume-item-header {
+    font-size: 9.5pt !important;
+    font-weight: 700 !important;
+    color: #0F172A !important;
+  }
+
+  .resume-item-sub {
+    font-size: 8.5pt !important;
+    font-weight: 600 !important;
+    color: #2563EB !important;
+    margin-bottom: 3pt !important;
+  }
+
+  .resume-bullets {
+    font-size: 8.5pt !important;
+    line-height: 1.4 !important;
+    color: #475569 !important;
+    padding-left: 14pt !important;
+  }
+
+  .resume-bullets li {
+    margin-bottom: 2pt !important;
+  }
+
+  .resume-skills-grid {
+    font-size: 8.5pt !important;
+    gap: 3pt 10pt !important;
+  }
+
+  .resume-skill-label {
+    font-weight: 700 !important;
+    color: #0F172A !important;
+  }
+
+  .resume-skill-val {
+    color: #475569 !important;
+  }
+
+  a {
+    color: #0F172A !important;
+    text-decoration: none !important;
+  }
+}

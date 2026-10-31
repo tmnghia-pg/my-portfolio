@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "utc-2023",
+      "institution": "Đại học Giao thông Vận tải",
+      "degree": {
+        "vi": "Kỹ sư Công nghệ thông tin",
+        "en": "Engineer in Information Technology"
+      },
+      "period": "2018 - 2023",
+      "graduationYear": 2023,
+      "grade": {
+        "vi": "Loại Giỏi",
+        "en": "Distinction (Giỏi)"
+      },
+      "highlights": {
+        "vi": "Chương trình kỹ sư chính quy chuyên ngành Công nghệ thông tin; hoàn thành đồ án tốt nghiệp và các học phần tiếng Anh chuyên ngành.",
+        "en": "Full-time Engineering curriculum in Information Technology; completed specialized IT English coursework and graduation thesis with Distinction."
+      }
+    }
+  ]
+}

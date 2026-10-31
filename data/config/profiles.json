@@ -1,0 +1,81 @@
+{
+  "defaultProfile": "dotnet-backend",
+  "profiles": [
+    {
+      "id": "dotnet-backend",
+      "name": {
+        "vi": ".NET Backend Developer",
+        "en": ".NET Backend Developer"
+      },
+      "badge": "Primary Target",
+      "headline": {
+        "vi": "Lập trình viên .NET | Backend & Giải pháp kỹ thuật",
+        "en": ".NET Developer | Backend & Technical Architecture"
+      },
+      "summary": {
+        "vi": "Lập trình viên chuyên sâu nền tảng .NET 8, ASP.NET Core và Clean Architecture với kinh nghiệm xây dựng các module nghiệp vụ phức tạp, công cụ báo cáo tùy chỉnh độc lập, xử lý tối ưu hiệu năng và an ninh hệ thống tại MISA. Có kinh nghiệm tổ chức quy trình AI Coding và đào tạo nhân sự Fresher.",
+        "en": "Specialized .NET engineer focusing on .NET 8, ASP.NET Core, and Clean Architecture with proven achievements delivering mission-critical business modules, standalone dynamic reporting engines, performance tuning, and security audits at MISA. Experienced in establishing AI-assisted workflows and mentoring fresher engineers."
+      },
+      "visibleSections": [
+        "summary",
+        "skills",
+        "experience",
+        "projects",
+        "education",
+        "certificates"
+      ],
+      "featuredProjectIds": [
+        "misa-bumas",
+        "misa-lekima",
+        "misa-panda-online",
+        "snapfox"
+      ],
+      "skillGroupsOrder": [
+        "backend",
+        "architecture",
+        "database",
+        "quality",
+        "tools",
+        "frontend"
+      ]
+    },
+    {
+      "id": "fullstack",
+      "name": {
+        "vi": "Full-stack Developer (.NET / Modern Web)",
+        "en": "Full-stack Developer (.NET / Modern Web)"
+      },
+      "badge": "Full-stack Variant",
+      "headline": {
+        "vi": "Lập trình viên Full-stack | .NET & Modern Web",
+        "en": "Full-stack Developer | .NET & Modern Web"
+      },
+      "summary": {
+        "vi": "Lập trình viên Full-stack kết hợp vững chắc giữa backend .NET 8/ASP.NET Core và frontend hiện đại (Vue 3, Next.js, ES6+). Kinh nghiệm triển khai các giải pháp từ hệ thống quản lý công nghiệp, tài chính đến nền tảng e-commerce và Print-on-Demand hoàn chỉnh.",
+        "en": "Versatile Full-stack Engineer bridging robust .NET 8/ASP.NET Core backend services with responsive modern frontends (Vue 3, Next.js, ES6+). Practical experience delivering end-to-end enterprise solutions, public finance tools, e-commerce brands, and POD automation suites."
+      },
+      "visibleSections": [
+        "summary",
+        "skills",
+        "experience",
+        "projects",
+        "education",
+        "certificates"
+      ],
+      "featuredProjectIds": [
+        "misa-bumas",
+        "snapfox",
+        "torven",
+        "misa-lekima"
+      ],
+      "skillGroupsOrder": [
+        "backend",
+        "frontend",
+        "database",
+        "architecture",
+        "quality",
+        "tools"
+      ]
+    }
+  ]
+}
